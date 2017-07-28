@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd "$HOME"
+
+echo "Init submodules"
+yadm submodule update --recursive --init
+
+
+#if command -v vim >/dev/null 2>&1; then
+#  echo "Bootstraping Vim"
+#  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+#fi
+

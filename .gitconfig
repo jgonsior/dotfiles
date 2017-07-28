@@ -1,0 +1,20 @@
+[include]
+	path = ~/.gitconfig-local
+[core]
+	editor = nvim
+	autocrlf = input
+[push]
+	default = matching
+
+[color]
+	status=auto
+	branch=auto
+	interactive=auto
+	diff=auto
+	ui = true
+
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[commit]
+	gpgsign = true
