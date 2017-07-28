@@ -22,7 +22,7 @@ call plug#end()
 
 " general
 set mouse=a
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " text editing
 set linebreak
