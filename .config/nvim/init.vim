@@ -2,13 +2,13 @@ call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'lifepillar/vim-solarized8'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tmhedberg/SimpylFold'
-"Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'lervag/vimtex'
 Plug 'nelstrom/vim-markdown-folding'
 Plug 'scrooloose/nerdcommenter'
@@ -41,9 +41,10 @@ let mapleader = "\<SPACE>"
 let maplocalleader = "\-"
 
 " appearance
-set termguicolors
+" set termguicolors
+
 set background=light
-colorscheme solarized
+colorscheme solarized8_light
 let g:solarized_termcolors=256
 
 let g:airline_powerline_fonts = 1
