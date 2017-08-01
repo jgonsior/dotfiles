@@ -13,6 +13,7 @@ Plug 'lervag/vimtex'
 Plug 'nelstrom/vim-markdown-folding'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'edkolev/tmuxline.vim'
 
 function! DoRemote(arg)
     " UpdateRemotePlugins
@@ -42,13 +43,13 @@ let maplocalleader = "\-"
 
 " appearance
 " set termguicolors
-
 set background=light
 colorscheme solarized8_light
 let g:solarized_termcolors=256
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
+
 syntax on
 set number
 set rnu " relative numbers
