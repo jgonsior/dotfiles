@@ -14,6 +14,7 @@ Plug 'nelstrom/vim-markdown-folding'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 function! DoRemote(arg)
     " UpdateRemotePlugins
@@ -59,6 +60,12 @@ set showmode
 
 if !&scrolloff
     set scrolloff=3       " Show next 3 lines while scrolling.
+        ls
+        ls
+            ls
+            ls
+        ls
+    ls
 endif
 
 
@@ -67,6 +74,13 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+
+
+"indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=7
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=white
 
 
 
@@ -171,11 +185,6 @@ au BufNewFile,BufRead *.js,*.html,*.css
 "let g:haskell_indent_guard = 2
 "let g:cabal_indent_section = 2
 "let g:cabal_indent_section = 2
-
-
-" auto save folding
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
 
 
 
