@@ -3,7 +3,6 @@ PATH="$HOME/.local/bin:$PATH"
 export ZSH=/home/monkey/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_COLOR_SCHEME='light'
-ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git colored-man-pages colorize mvn python )
 source $ZSH/oh-my-zsh.sh
