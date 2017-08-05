@@ -15,6 +15,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+
 
 call plug#end()
 
@@ -85,14 +88,14 @@ augroup END
 set updatetime=250
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 "ctrlp
 " Open file menu
@@ -107,6 +110,10 @@ let g:SimpylFold_docstring_preview = 1
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
+
+
+
+" deopolete
 let g:deoplete#enable_at_startup = 1
 
 
