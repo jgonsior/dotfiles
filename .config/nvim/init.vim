@@ -17,7 +17,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
