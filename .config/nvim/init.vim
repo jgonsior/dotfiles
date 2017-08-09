@@ -24,6 +24,8 @@ call plug#end()
 " general
 set mouse=a
 set clipboard=unnamed
+set modeline
+set 
 
 " text editing
 set linebreak
@@ -184,9 +186,9 @@ let g:cabal_indent_section = 2
 let g:cabal_indent_section = 2
 
 
-" auto save folding
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+" auto save folding -> not working?
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview 
 
 
 " markdown - must come as the very least settings in here
