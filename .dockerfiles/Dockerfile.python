@@ -1,0 +1,10 @@
+# vi: ft=dockerfile
+
+FROM base/archlinux
+RUN pacman-db-upgrade
+RUN pacman -Syyu --noconfirm && pacman --noconfirm -S python2-pip
+RUN pip2 install pandas
+RUN pip2 install tabulate
+WORKDIR /code/tools
+#CMD python
+

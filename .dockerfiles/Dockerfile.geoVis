@@ -1,0 +1,10 @@
+# vi: ft=dockerfile
+
+FROM base/archlinux
+EXPOSE 80/tcp
+RUN useradd -m -G wheel -s /bin/bash monkey
+RUN pacman-db-upgrade
+RUN pacman -Syyu --noconfirm && pacman --noconfirm -S python2-pip nodejs npm nginx
+RUN npm install -g grunt grunt-autoprefixer grunt-contrib-compass grunt-contrib-uglify grunt-contrib-watch bower
+WORKDIR /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
