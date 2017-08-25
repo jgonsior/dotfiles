@@ -4,9 +4,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lifepillar/vim-solarized8'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'lervag/vimtex'
@@ -18,6 +18,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
+Plug 'Shougo/denite.nvim'
+Plug 'w0rp/ale'
+
 
 call plug#end()
 
@@ -49,8 +52,11 @@ set background=light
 colorscheme solarized8_light
 let g:solarized_termcolors=256
 
+
+" airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
+let g:airline#extensions#ale#enabled = 1
 
 syntax on
 set number
@@ -88,16 +94,6 @@ augroup END
 
 " git
 set updatetime=250
-
-" syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 
 "ctrlp
 " Open file menu
@@ -186,9 +182,53 @@ let g:cabal_indent_section = 2
 let g:cabal_indent_section = 2
 
 
+
 " auto save folding -> not working?
 " autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview 
+
+
+
+" ale
+let g:ale_sign_column_always = 1
+" let g:ale_completion_enabled = 1 currently only supported by tsserver…
+let g:ale_java_checkstyle_options = '-c /home/monkey/shk/code/geosoft_checks.xml'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {
+            \    'java': ['checkstyle'],
+            \}
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+
+
+" neoformat
+let g:neoformat_java_astyle2 = {
+    \ 'exe': 'astyle',
+    \ 'stdin': 1,
+    \ 'args' : ['--mode=java', '--indent=spaces=2', '--style=kr'],
+    \ 'no_append': 1,
+    \}
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.java undojoin | Neoformat astyle2
+augroup END
+
+
+
+" java
+au BufNewFile,BufRead *.java
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+
 
 
 " markdown - must come as the very least settings in here
