@@ -4,9 +4,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lifepillar/vim-solarized8'
 Plug 'airblade/vim-gitgutter'
-"Plug 'vim-syntastic/syntastic'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'lervag/vimtex'
@@ -20,7 +18,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
 Plug 'Shougo/denite.nvim'
 Plug 'w0rp/ale'
-
+Plug 'artur-shaik/vim-javacomplete2'
 
 call plug#end()
 
@@ -102,6 +100,12 @@ nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 " Open most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
+
+
+
+
+
+
 
 " simplyfold
 let g:SimpylFold_docstring_preview = 1
