@@ -20,6 +20,9 @@ Plug 'Shougo/denite.nvim'
 Plug 'w0rp/ale'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitiveram'
 
 call plug#end()
 
@@ -233,6 +236,24 @@ au BufNewFile,BufRead *.java
     \ set autoindent |
     \ set fileformat=unix |
 
+
+
+" fzf
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_tags_command = 'ctags -R'
+let g:fzf_buffers_jump = 1
 
 
 
