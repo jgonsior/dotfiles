@@ -39,3 +39,5 @@ function preexec {
     # Refresh environment if inside tmux
     refresh
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
