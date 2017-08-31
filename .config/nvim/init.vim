@@ -22,7 +22,7 @@ Plug 'artur-shaik/vim-javacomplete2'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitiveram'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -101,9 +101,9 @@ set updatetime=250
 " Open file menu
 nnoremap <Leader>o :CtrlP<CR>
 " Open buffer menu
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>b :Buffer<CR>
 " Open most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
+nnoremap <Leader>f :Files<CR>
 
 
 
@@ -216,7 +216,7 @@ let g:ale_set_quickfix = 1
 let g:neoformat_java_astyle2 = {
     \ 'exe': 'astyle',
     \ 'stdin': 1,
-    \ 'args' : ['--mode=java', '--indent=spaces=2', '--style=kr'],
+    \ 'args' : ['--mode=java', '--indent=spaces=2', '--style=kr', '--pad-oper', '--pad-header', '--unpad-paren'],
     \ 'no_append': 1,
     \}
 
@@ -225,6 +225,10 @@ augroup fmt
   autocmd BufWritePre *.java undojoin | Neoformat astyle2
 augroup END
 
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.py undojoin | Neoformat
+augroup END
 
 
 " java
@@ -254,7 +258,7 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_buffers_jump = 1
-
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 
 " markdown - must come as the very least settings in here
