@@ -1,3 +1,4 @@
+export LANG="en_US.UTF-8"
 PATH="$HOME/.local/bin:$PATH"
 #export TERM="xterm-256color"
 export ZSH=/home/monkey/.oh-my-zsh
