@@ -2,6 +2,9 @@
 
 cd "$HOME"
 
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 echo "Init submodules"
 yadm submodule update --recursive --init
 
@@ -15,4 +18,6 @@ if command -v nvim >/dev/null 2>&1; then
 fi
 
 # install powerline
-pip install powerline-status
+sudo pacman -S powerline-status
+
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
