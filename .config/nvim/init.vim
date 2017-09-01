@@ -159,15 +159,6 @@ au BufNewFile,BufRead *.js,*.html,*.css
     \ set shiftwidth=2 |
 
 
-" js development
-let g:used_javascript_libs = 'angularjs, angularui, jquery'
-
-au BufNewFile,BufRead *.js,*.html,*.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-
-
 
 
 " Haskell
