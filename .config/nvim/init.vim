@@ -30,7 +30,6 @@ call plug#end()
 set mouse=a
 set clipboard=unnamed
 set modeline
-set 
 
 " text editing
 set linebreak
