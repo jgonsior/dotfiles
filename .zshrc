@@ -5,7 +5,7 @@ export ZSH=/home/monkey/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_COLOR_SCHEME='light'
 COMPLETION_WAITING_DOTS="true"
-plugins=(git colored-man-pages colorize mvn python )
+plugins=(git colored-man-pages colorize mvn python virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
