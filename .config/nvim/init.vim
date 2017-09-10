@@ -55,9 +55,9 @@ let g:solarized_termcolors=256
 
 
 " airline
+let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
-let g:airline#extensions#ale#enabled = 1
 
 syntax on
 set number
@@ -197,6 +197,12 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
             \    'java': ['checkstyle'],
             \}
+
+let g:ale_fixers = {
+\   'python': ['autopep8', 'yapf', 'isort'],
+\}
+
+
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
