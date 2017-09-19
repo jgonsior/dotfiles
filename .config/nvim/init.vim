@@ -23,6 +23,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
 
 call plug#end()
 
