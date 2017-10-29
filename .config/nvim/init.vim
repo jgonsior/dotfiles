@@ -11,7 +11,7 @@ Plug 'lervag/vimtex'
 Plug 'nelstrom/vim-markdown-folding'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/indentpython.vim'
-" Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
