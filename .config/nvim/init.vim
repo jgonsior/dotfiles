@@ -51,7 +51,7 @@ let maplocalleader = "\-"
 " appearance
 " set termguicolors
 set background=light
-colorscheme solarized8_light
+colorscheme solarized8
 let g:solarized_termcolors=256
 
 
