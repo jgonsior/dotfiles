@@ -44,6 +44,10 @@ function preexec {
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+
 _gen_fzf_default_opts() {
   local base03="234"
   local base02="235"
