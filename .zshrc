@@ -51,6 +51,7 @@ if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
 fi
 
 
+
 _gen_fzf_default_opts() {
   local base03="234"
   local base02="235"
