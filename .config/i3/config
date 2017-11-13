@@ -10,11 +10,12 @@ bindsym $mod+e exec mousepad
 # wallpaper
 exec --no-startup-id feh --bg-fill $HOME/.wallpaper.jpg
 exec --no-startup-id nm-applet --sm-disable
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id telegram
-exec --no-startup-id chromium-browser
 exec --no-startup-id "setxkbmap de neo"
 exec --no-startup-id "xmodmap $HOME/.Xmodmap"
+exec --no-startup-id telegram
+exec --no-startup-id chromium-browser
+exec --no-startup-id "redshift-gtk"
+exec --no-startup-id xfce4-power-manager
 
 
 bindsym $mod+Shift+a kill
