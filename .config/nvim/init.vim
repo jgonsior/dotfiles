@@ -49,10 +49,9 @@ let mapleader = "\<SPACE>"
 let maplocalleader = "\-"
 
 " appearance
-" set termguicolors
-set background=light
-colorscheme solarized8
-let g:solarized_termcolors=256
+set termguicolors
+colorscheme solarized8_flat
+"let g:solarized_termcolors=256
 
 
 " airline
