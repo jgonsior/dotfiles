@@ -57,7 +57,7 @@ tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
