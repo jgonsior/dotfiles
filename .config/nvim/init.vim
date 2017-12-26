@@ -52,9 +52,7 @@ let maplocalleader = "\-"
 
 " appearance
 set termguicolors
-" set background=light
-colorscheme solarized8_light
-"let g:solarized_termcolors=256
+colorscheme solarized8_flat
 
 
 " airline
