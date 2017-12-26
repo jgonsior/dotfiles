@@ -24,6 +24,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
+Plug 'neomutt/neomutt', {'rtp': '/blob/master/doc/neomutt-syntax.vim'}
+Plug 'digitaltoad/vim-pug'
 
 call plug#end()
 
@@ -49,10 +51,10 @@ let mapleader = "\<SPACE>"
 let maplocalleader = "\-"
 
 " appearance
-" set termguicolors
-set background=light
+set termguicolors
+" set background=light
 colorscheme solarized8_light
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 
 
 " airline
