@@ -1,0 +1,21 @@
+[general]
+accounts = uberspace
+pythonfile = ~/.offlineimap.py
+
+[Account uberspace]
+localrepository = uberspace-local
+remoterepository = uberspace-remote
+
+[Repository uberspace-local]
+type= Maildir
+localfolders = ~/.mail
+
+[Repository uberspace-remote]
+type = IMAP
+remotehost = grus.uberspace.de
+remoteuser = ragada
+remotepasseval = get_pass("uberspace")
+
+
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
