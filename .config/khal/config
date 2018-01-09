@@ -1,0 +1,15 @@
+[calendars]
+
+[[nc_cal_local]]
+path = ~/.calendars/*
+type = discover
+
+[locale]
+timeformat = %H:%M
+dateformat = %d.%m.%y
+longdateformat = %d.%m.%y
+datetimeformat = %d.%m.%y %H:%M
+longdatetimeformat = %d.%m.%y %H:%M
+
+[view]
+theme = light
