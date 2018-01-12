@@ -33,4 +33,4 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://nc.gaenseri.ch/remote.php/dav/"
 username = "julius"
-password.fetch = ["command", "pass", "nc.gaenseri.ch/julius"]
+password.fetch = ["command", "pass", "server/luffy/nc.gaenseri.ch/julius"]
