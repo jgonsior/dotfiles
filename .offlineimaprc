@@ -5,6 +5,10 @@ pythonfile = ~/.offlineimap.py
 [Account uberspace]
 localrepository = uberspace-local
 remoterepository = uberspace-remote
+autorefresh = 5
+quick = -1
+
+postsynchook = ~/.tag_my_mail.sh
 
 [Repository uberspace-local]
 type= Maildir
@@ -16,6 +20,8 @@ remotehost = grus.uberspace.de
 remoteuser = ragada
 remotepasseval = get_pass("uberspace")
 
+idlefolders = ['INBOX', 'ifsr']
+maxconnections = 2
 
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt

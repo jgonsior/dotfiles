@@ -54,7 +54,7 @@ set forward_quote
 #sending
 set realname = 'Julius Gonsior'
 
-set sendmail="~/.mail_configs/nm_sendmail"
+set sendmail= "~/.nm_sendmail.sh"
 set envelope_from = yes
 set use_from = yes
 set edit_headers=yes # i can edit the from header with nvim
