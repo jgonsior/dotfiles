@@ -1,6 +1,5 @@
 export LANG="en_US.UTF-8"
 PATH="$HOME/.local/bin:$PATH"
-export TERM="xterm-256color"
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_COLOR_SCHEME='light'
@@ -44,12 +43,11 @@ function preexec {
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 
-# Set GPG TTY
-export GPG_TTY=$(tty)
+export MATES_DIR=~/.contacts/contacts
 
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
 
 _gen_fzf_default_opts() {
   local base03="234"
@@ -82,4 +80,5 @@ _gen_fzf_default_opts() {
     --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
   "
 }
+
 _gen_fzf_default_opts
