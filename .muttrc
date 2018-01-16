@@ -105,6 +105,7 @@ set crypt_use_gpgme=yes
 set crypt_replysign=yes
 set crypt_replysignencrypted=yes
 set pgp_timeout=3600
+set pgp_self_encrypt = yes
 
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp" #mutt doesn't recognizes enigmails as encrypted otherwise
 
@@ -155,3 +156,9 @@ macro index,pager G "<enter-command>unset resolve<enter><clear-flag>N<enter-comm
 macro index,pager <f2> "<modify-labels>"
 
 auto_view text/calendar application/ics
+
+
+
+# forgotton atachment
+set abort_noattach = ask-yes
+set attach_keyword = "\\<attach(|ed|ments?)|anhängen|angehängt|anhang|anhänge|hängt an\\>"
