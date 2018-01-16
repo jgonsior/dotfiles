@@ -8,9 +8,6 @@ bindsym $mod+e exec mousepad
 # lock screen
 bindsym $mod+F12 exec i3lock-fancy -g 
 
-exec --no-start-id $HOME/.startup.sh
-
-
 # kill focused window
 bindsym $mod+Shift+a kill
 
