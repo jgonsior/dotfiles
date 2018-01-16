@@ -1,0 +1,6 @@
+rofi.sidebar-mode:  false
+rofi.theme:         sidestyle.calc
+rofi.show-icons: false
+rofi.fuzzy: true
+rofi.threads: 2
+rofi.levenshtein-sort: true

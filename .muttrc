@@ -1,0 +1,164 @@
+set folder = "~/.mail"
+set check_new = yes
+
+set spoolfile = "+INBOX"
+set header_cache = "~/.cache/mutt"
+set message_cachedir = "~/.cache/mutt"
+set postponed = "+drafts"
+
+set record = "+INBOX"
+set nm_record = yes
+set nm_record_tags = "inbox sent learn_ham learned"
+
+
+
+# not much
+set nm_default_uri= "notmuch:///home/monkey/.mail"
+set virtual_spoolfile = yes
+
+tag-transforms \
+	"attachment" "📎" \
+	"replied" "↩" \
+	"flagged" "⭐" \
+	"signed" "✏" \
+	"encrypted" "🔐" \
+	"flagged" "⚑"   \
+	"sent"    "➥"  \
+
+set nm_query_type = threads
+
+set sort_browser = unsorted
+# virtual folders
+virtual-mailboxes \
+	"INBOX"         "notmuch://?query=tag:inbox AND NOT tag:facebook AND NOT tag:spam" \
+	"unread"	"notmuch://?query=tag:unread"\
+	"archive"	"notmuch://?query=tag:archive AND NOT tag:facebook"\
+	"fb"		"notmuch://?query=tag:facebook"\
+	"spam"		"notmuch://?query=tag:spam"\
+	"all"		"notmuch://?query=date:2M..0s AND NOT tag:facebook"
+
+# composing
+set signature=~/.mail_signature
+set sig_on_top #signature before quoting
+unset sig_dashes # no -- before signature
+set reply_regexp="^((re([\[^-][0-9]+\]?)*|aw|antwort|antw|wg):[ \t]*)+" #aus aw, wg etc. re machen
+set editor='nvim -c "set t_Co=8" -c "syntax on" -c "/^$" -c "set tw=72" -c "set number" -c "set filetype=mail"  -c "set spell spelllang=de,en"'
+set include = yes			#automatically quote by replying
+set indent_str = "> "
+set fast_reply
+set attribution = "On %d, %n wrote:"
+set include
+set forward_quote
+
+
+#sending
+set realname = 'Julius Gonsior'
+
+set sendmail= "~/.nm_sendmail.sh"
+set envelope_from = yes
+set use_from = yes
+set edit_headers=yes # i can edit the from header with nvim
+set reverse_name=yes
+alternates     ^julius@ifsr.de$     ^julius.gonsior@mailbox.tu-dresden.de$     @gaenseri.ch ^ragada@grus.uberspace.de$ ^julius@esn-dresden.de$	^julius.gonsior@tu-dresden.de$
+send-hook . "set from=julius@gaenseri.ch"
+send-hook @ifsr.de 'set from=julius@ifsr.de'
+send-hook @esn-dresden.de 'set from=julius@esn-dresden.de'
+send-hook @tu-dresden.de 'set from=julius.gonsior@tu-dresden.de'
+
+
+# forward mail with attachements
+set mime_forward
+set mime_forward_rest=yes
+
+
+# interafce
+set edit_hdrs
+ignore *
+unignore from: to: cc: bcc: date: subject: X-Mailer: X-Priority: X-Label: X-Dspam-Confidence: X-DSPAM-Result: 
+hdr_order From: Subject: To: CC: BCC: Reply-To: Date: User-Agent: X-Mailer: X-Label: X-DSPAM-Result: Spam X-Dspam-Confidence: 
+source ~/.mutt_colors
+
+set sort = threads
+set sort_aux = last-date-received
+set pager_index_lines=10
+set mailcap_path = ~/.mail_configs/mailcap
+#set index_format = "%4C %Z %<[1d?%[  %H:%M]&%[ %b %d]>  %-18.18n    %s %* %?g?%g? "
+set index_format="%4C %Z %?GI?%GI& ? %[%d/%b]  %-16.15F %?M?(%3M)&     ? %s %> %?g?%g?"
+#set index_format='%4C %Z %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> %-15.15L (%?l?%4l&%4c?) %s'
+set pager_format = "-%Z- %C/%m: %-20.20n   %s%*  -- %?g?(%g)? - (%P)"
+
+set tilde
+set smart_wrap
+set menu_scroll
+auto_view image/*
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+#time -> klappt ni!
+set date_format="%a %d.%m %H:%M"
+set folder_format="%2C %8s %d %t %N %f"
+
+
+#gpg settings
+set pgp_use_gpg_agent = yes
+set crypt_use_gpgme=yes
+set crypt_replysign=yes
+set crypt_replysignencrypted=yes
+set pgp_timeout=3600
+set pgp_self_encrypt = yes
+
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp" #mutt doesn't recognizes enigmails as encrypted otherwise
+
+set crypt_autosign = yes
+set crypt_verify_sig = yes
+set pgp_sign_as = 6015B27E
+set pgp_good_sign="^gpg: Good signature from"
+
+
+# generate virtual folder from query
+bind index,pager \eX vfolder-from-query
+
+# open a different virtual folder
+bind index,pager X change-vfolder
+
+#set sidebar_visible = yes
+
+color progress white yellow 
+
+
+# charsets
+set charset = UTF-8
+
+
+set query_command= "mates mutt-query '%s'"
+
+# Normally you'd have to hit Ctrl-T for completion.
+# This rebinds it to Tab.
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+macro index,pager A \
+    "<pipe-message>mates add | xargs mates edit<enter>" \
+    "add the sender address"
+
+
+
+# shortcuts
+# move message to archive and copy to ham folder
+macro index,pager A "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-inbox +archive +learn_ham\n" "archived message"
+
+# mark message as spam
+macro index,pager B "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-inbox +spam +learn_spam\n" "marked as spam"
+
+# mark false positive as true positive and copy to inbox
+macro index,pager G "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-spam +inbox +learn_ham +noSpam\n" "marked spam as ham"
+
+macro index,pager <f2> "<modify-labels>"
+
+auto_view text/calendar application/ics
+
+
+
+# forgotton atachment
+set abort_noattach = ask-yes
+set attach_keyword = "\\<attach(|ed|ments?)|anhängen|angehängt|anhang|anhänge|hängt an\\>"
