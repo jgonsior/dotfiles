@@ -44,11 +44,8 @@ function preexec {
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 
-# Set GPG TTY
-export GPG_TTY=$(tty)
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
 
 
 _gen_fzf_default_opts() {
