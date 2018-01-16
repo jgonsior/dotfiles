@@ -10,6 +10,8 @@ qtpass&
 nm-applet --sm-disable&
 #(sleep 25 && syncthing-gtk) &
 (sleep 25 && telegram-desktop) &
-(sleep 25 && gajim) &
+#(sleep 25 && gajim) &
+(gpgconf --kill gpg-agent && gpg-connect-agent updatestartuptty /bye)&
+xmodmap -e "keycode 133=ISO_Level3_Shift"&
 cat $HOME/.config/i3/config.local $HOME/.config/i3/config.base > $HOME/.config/i3/config
 exec i3 -V >>  /tmp/i3log-$(date +'%F-%k-%M-%S') 2>&1
