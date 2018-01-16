@@ -45,6 +45,10 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 export MATES_DIR=~/.contacts/contacts
 
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
 _gen_fzf_default_opts() {
   local base03="234"
   local base02="235"
@@ -76,4 +80,5 @@ _gen_fzf_default_opts() {
     --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
   "
 }
+
 _gen_fzf_default_opts
