@@ -13,7 +13,7 @@ set nm_record_tags = "inbox sent learn_ham learned"
 
 
 # not much
-set nm_default_uri= "notmuch:///home/monkey/.mail"
+set nm_default_uri= "notmuch://$HOME/.mail"
 set virtual_spoolfile = yes
 
 tag-transforms \
