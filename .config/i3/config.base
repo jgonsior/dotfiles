@@ -1,0 +1,156 @@
+font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
+exec compton -cb -I 1
+floating_modifier $mod
+
+bindsym $mod+Return exec tilix 
+bindsym $mod+e exec mousepad
+
+# lock screen
+bindsym $mod+F12 exec i3lock-fancy -g 
+
+exec --no-start-id $HOME/.startup.sh
+
+
+# kill focused window
+bindsym $mod+Shift+a kill
+
+# start rofi (a program launcher)
+bindsym $mod+r exec "rofi -modi run -show run -prompt"
+bindsym $mod+k exec "rofi -show calc -modi 'calc:qalc +u8' -lines 1 -config /home/ragada/.config/rofi/config.calc -prompt"
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+for_window [title="Preferences$"] floating enable
+
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+p split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling/floating
+bindsym $mod+Shift+space floating toggle
+
+
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4; layout tabbed
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+
+workspace_auto_back_and_forth yes
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4; layout tabbed
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# reload the configuration file
+bindsym $mod+Shift+Ä reload
+
+
+
+
+bindsym $mod+w layout tabbed
+
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+# These bindings trigger as soon as you enter the resize mode
+
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+
+# same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+# back to normal: Enter or Escap
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+d mode "resize"
+
+new_window none
+
+hide_edge_borders both
+
+for_window [class="Spotify"] move to workspace 2
+
+#exec --no-startup-id tilix -T notes --working-directory=/home/ragada/.syncthing/sharing/documents/n/notes/ -e "nvim todos.md"
+#assign [title="notes"] 3
+
+#exec --no-startup-id tilix -T offlineimap -e "offlineimap"
+#assign [title="offlineimap"] 4
+
+
+# change volume or toggle mute
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#    strip_workspace_numbers yes
+#        status_command SCRIPT_DIR=~/.config/i3blocks/i3blocks-contrib i3blocks 
+#        status_command i3status-rs ~/.config/i3statusrust/example_config.toml
+#        position top
+#        colors {
+#            separator #666666
+#                background #222222
+#                statusline #dddddd
+#                focused_workspace #0088CC #0088CC #ffffff
+#                active_workspace #333333 #333333 #ffffff
+#                inactive_workspace #333333 #333333 #888888
+#                urgent_workspace #2f343a #900000 #ffffff
+#        }
+#}
