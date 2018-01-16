@@ -1,0 +1,146 @@
+/* ================================================= */
+/*  Rofi config by lans9831                          */
+/*  Suggested icon pack: Papirus                     */
+/* ================================================= */
+
+
+configuration {
+    display-run: "";
+}
+
+* {
+    /* Make text color white and background fully transparent */
+    text-color:        White;
+    background-color:  rgba(0,0,0,0);
+
+    fc-color: #0088CC;
+    bg-color: #222222;
+    fc-color-trans: #0088CCC5; 
+    bg-color-trans: #222222F0;
+
+    font: "Source Code Pro Medium 10.5";
+}
+
+/* ================================================= */
+/* Main container                                    */
+/* ================================================= */
+#window {
+    fullscreen:    true;
+    location:      west;
+    anchor:        west;
+    border:        0px 0px 0px 0px;
+    transparency:  "real";
+
+    orientation:  horizontal;
+    children:     [mainbox, dummy];
+}
+
+/* First container */
+#mainbox {
+    expand:            false;
+    background-color:  @bg-color-trans;
+    spacing:           0em;
+}
+
+/* Dummy container */
+#dummy { 
+    expand: true; 
+}
+/* ================================================= */
+
+/* ================================================= */
+/* Sidebar and its elements                          */
+/* ================================================= */
+#sidebar {
+    border:  0px 0px 0px 0px;
+}
+
+#button {
+    padding:    10px;
+}
+
+#button selected {
+    /*font:              "Open Sans SemiBold 11";*/
+    background-color:  @fc-color-trans;
+}
+/* ================================================= */
+
+/* ================================================= */
+/*  Input bar                                        */
+/* ================================================= */
+#inputbar {
+    background-color:  @bg-color;
+    padding:           3px;
+    spacing:		   5px;
+}
+
+#prompt {
+    /*	font: "Open Sans SemiBold Italic 11";*/
+}
+
+#entry {
+    /*font: "Open Sans Italic 11";*/
+    width: 15em;
+}
+/* ================================================= */
+
+
+/* ================================================= */
+/* List view																				 */
+/* ================================================= */
+#listview {
+    /*spacing: 0.5em;*/
+}
+
+#element {
+    /*font:     "Open Sans 13";*/
+    padding:  12px 1.5em 12px 14px;
+}
+
+#element selected normal {
+    background-color: @fc-color-trans;
+}
+
+#element normal active {
+    background-color: @fc-color-trans;
+}
+
+#element normal urgent {
+    background-color: Orange;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+    text-color: @focus-col;
+}
+
+#element alternate urgent {
+    background-color: OrangeRed;
+}
+
+#element selected active {
+    background-color:  @fc-color-trans;
+}
+
+#element selected urgent {
+    background-color:  DarkOrange;
+}
+
+#button {
+    padding: 0;
+    border: 0;
+    font: "Mono 0";
+    background-color: @fc-color-trans;
+} 
+
+#button selected {
+    padding: 0;
+    border: 0;
+    font: "Mono 0";
+    background-color: #22222200;
+    color: #22222200;
+}
+
+/* vim:ft=css */
