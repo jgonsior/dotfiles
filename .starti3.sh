@@ -6,6 +6,6 @@ xset -b&
 redshift-gtk&
 qtpass&
 nm-applet --sm-disable&
-(sleep 25 && gajim) &
+#(sleep 25 && gajim) &
 cat $HOME/.config/i3/config.local $HOME/.config/i3/config.base > $HOME/.config/i3/config
 exec i3 -V >>  /tmp/i3log-$(date +'%F-%k-%M-%S') 2>&1
