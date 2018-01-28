@@ -43,6 +43,9 @@ function preexec {
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 
+alias notes="cd ~/documents/n/notes; nvim bullet.md"
+
+
 export MATES_DIR=~/.contacts/contacts
 
 if [ -f ~/.zshrc.local ]; then
