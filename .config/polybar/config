@@ -42,7 +42,7 @@ font-3 = ${self.font-0}
 
 modules-left = i3
 modules-center = xwindow
-modules-right = music xbacklight pavolume memory cpu battery temperature date
+modules-right = music xbacklight pavolume memory cpu temperature date
 
 tray-position = right
 tray-padding = 0
