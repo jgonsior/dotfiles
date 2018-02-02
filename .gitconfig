@@ -20,10 +20,10 @@
 [user]
     name = Julius Gonsior
     email = julius@gaenseri.ch
-    signingkey = julius@gaenseri.ch
+	signingkey = julius@gaenseri.ch
 
 [commit]
-    gpgsign = true
+	gpgsign = true
 
 [gpg]
-    program = gpg2
+    program = gpg

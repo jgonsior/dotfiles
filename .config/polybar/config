@@ -30,7 +30,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-
+;
 font-0 = "Source Code Pro Medium:pixelsize=10.5;2"
 font-1 = "FontAwesome:pixelsize=11;2"
 font-2 = ${self.font-0}
@@ -42,7 +42,7 @@ font-3 = ${self.font-0}
 
 modules-left = i3
 modules-center = xwindow
-modules-right = music xbacklight pavolume memory cpu temperature date
+modules-right = music xbacklight pavolume memory cpu temperature network date
 
 tray-position = right
 tray-padding = 0
@@ -210,6 +210,15 @@ ramp-3 = 
 ramp-2 = 
 ramp-1 = 
 ramp-0 = 
+
+
+[module/network]
+type = internal/network
+interface = eno1
+interval = 3
+accumulate-stats = true
+
+label-connected =  %upspeed:4:9%  %downspeed:4:9%
 
 [settings]
 screenchange-reload = true
