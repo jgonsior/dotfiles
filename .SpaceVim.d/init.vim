@@ -91,3 +91,11 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+
+" Auto format on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+let g:neoformat_run_all_formatters = 1
