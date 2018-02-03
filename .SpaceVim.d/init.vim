@@ -28,6 +28,7 @@ call SpaceVim#layers#load('language-server-protocol')
 call SpaceVim#layers#load('lang/html')
 call SpaceVim#layers#load('vim')
 
+let g:spacevim_plugin_bundle_dir = '$HOME/.dein_plugins'
 let g:spacevim_enable_vimfiler_welcome = 1
 let g:spacevim_enable_debug = 1
 let g:deoplete#auto_complete_delay = 150
