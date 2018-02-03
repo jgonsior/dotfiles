@@ -76,6 +76,10 @@ let g:spacevim_custom_plugins = [
 \ ['nathanaelkane/vim-indent-guides'],
 \ ]
 
+let g:spacevim_disabled_plugins=[
+\ ['Floobits/floobits-neovim'],
+\ ]
+
 let g:indentLine_enabled = 0
 
 let g:spacevim_github_username = "jgonsior"
