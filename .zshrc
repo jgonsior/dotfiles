@@ -35,6 +35,10 @@ else
     function refresh { }
 fi
 
+source $HOME/.gitsoftware/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd  histdb-update-outcome
+
 function preexec {
     # Refresh environment if inside tmux
     refresh
