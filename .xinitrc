@@ -1,1 +1,1 @@
-./.starti3.sh
+$HOME/.starti3.sh
