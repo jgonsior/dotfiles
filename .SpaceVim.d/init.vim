@@ -28,6 +28,7 @@ call SpaceVim#layers#load('language-server-protocol')
 call SpaceVim#layers#load('lang/html')
 call SpaceVim#layers#load('vim')
 
+let g:spacevim_plugin_bundle_dir = '$HOME/.dein_plugins'
 let g:spacevim_enable_vimfiler_welcome = 1
 let g:spacevim_enable_debug = 1
 let g:deoplete#auto_complete_delay = 150
@@ -75,6 +76,10 @@ let g:spacevim_custom_plugins = [
 \ ['nathanaelkane/vim-indent-guides'],
 \ ]
 
+let g:spacevim_disabled_plugins=[
+\ ['Floobits/floobits-neovim'],
+\ ]
+
 let g:indentLine_enabled = 0
 
 let g:spacevim_github_username = "jgonsior"
@@ -99,3 +104,5 @@ augroup fmt
 augroup END
 
 let g:neoformat_run_all_formatters = 1
+
+let g:neoformat_enabled_javascript = ['jsbeautify']

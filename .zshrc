@@ -14,6 +14,7 @@ PATH=$PATH:$HOME/.cargo/bin
 # npm
 NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
+PATH="$HOME/.bin/:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
@@ -33,6 +34,10 @@ if [ -n "$TMUX" ]; then
 else
     function refresh { }
 fi
+
+source $HOME/.gitsoftware/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd  histdb-update-outcome
 
 function preexec {
     # Refresh environment if inside tmux

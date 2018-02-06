@@ -214,7 +214,7 @@ ramp-0 = 
 
 [module/network]
 type = internal/network
-interface = eno1
+interface = ${file:$HOME/.config/polybar/network:eno1}
 interval = 3
 accumulate-stats = true
 
