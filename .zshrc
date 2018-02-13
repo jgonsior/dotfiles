@@ -89,8 +89,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0.1
 
 
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context_joined root_indicator dir dir_writable_joined)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time_joined vcs_joined virtualenv_joined background_jobs_joined time_joined)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir dir_writable_joined)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time vcs virtualenv context background_jobs time)
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
