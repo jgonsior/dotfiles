@@ -76,8 +76,8 @@ POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND="clear"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
 
-
-POWERLEVEL9K_HOST_TEMPLATE="%K{clear}%m%k"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="clear"
+POWERLEVEL9K_CONTEXT_DEFAULT_foreground="grey"
 
 # Time
 POWERLEVEL9K_TIME_FORMAT="%F{cyan}\uf017 %D{%I:%M}%f"
@@ -89,8 +89,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0.1
 
 
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir dir_writable_joined)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time_joined vcs_joined virtualenv_joined host_joined background_jobs_joined time_joined)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context_joined root_indicator dir dir_writable_joined)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time_joined vcs_joined virtualenv_joined background_jobs_joined time_joined)
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
