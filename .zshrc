@@ -92,6 +92,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0.1
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir dir_writable_joined)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time vcs virtualenv context background_jobs time)
 
+export DEFAULT_USER="$USER"
+
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
