@@ -97,12 +97,25 @@ set expandtab
 set softtabstop=4
 
 
-" Auto format on save
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+function IsProject(projectname)
+    let l:result = match(expand('%:p'), a:projectname)
+    if l:result == -1
+        return 0
+    else
+        return 1
+endfunction
 
-let g:neoformat_run_all_formatters = 1
+" use autoformat for the following projects only:
+function! SetupEnvironment()
+    if IsProject("coding/doxieGoLinuxWifi") || IsProject('coding/gaenserich')
+        let g:neoformat_run_all_formatters = 1
+        let g:neoformat_enabled_javascript = ['jsbeautify']
+        augroup fmt
+            autocmd!
+            autocmd BufWritePre * undojoin | Neoformat
+        augroup END
+    endif
+endfunction
 
-let g:neoformat_enabled_javascript = ['jsbeautify']
+autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
+
