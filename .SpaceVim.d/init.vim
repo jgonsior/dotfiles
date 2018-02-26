@@ -89,6 +89,10 @@ let g:spacevim_enable_cursorcolumn = 0
 let g:spacevim_default_indent = 4
 set nocursorline
 
+
+set mouse=a
+
+
 " tabs
 set autoindent
 set tabstop=4
