@@ -50,6 +50,15 @@ endif
 let g:clang2_placeholder_next = ''
 let g:clang2_placeholder_prev = ''
 
+
+" linting with ale
+let g:spacevim_enable_ale = 1
+let g:spaevim_enable_neomake = 0
+let g:spacevim_lint_on_the_fly = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_python_flake8_options = "--max-line-length=100"
+
 "set t_8f=[38;2;%lu;%lu;%lum
 "set t_8b=[48;2;%lu;%lu;%lum
 
@@ -111,7 +120,7 @@ endfunction
 
 " use autoformat for the following projects only:
 function! SetupEnvironment()
-    if IsProject("coding/doxieGoLinuxWifi") || IsProject('coding/gaenserich')
+    if IsProject("coding/doxieGoLinuxWifi") || IsProject('coding/gaenserich') || IsProject('session-metrics-classification')
         let g:neoformat_run_all_formatters = 1
         let g:neoformat_enabled_javascript = ['jsbeautify']
         augroup fmt
