@@ -15,6 +15,7 @@ call SpaceVim#layers#load('lang#rust')
 call SpaceVim#layers#load('lang#swig')
 call SpaceVim#layers#load('lang#tmux')
 call SpaceVim#layers#load('lang#vim')
+call SpaceVim#layers#load('lang#latex')
 call SpaceVim#layers#load('lang#xml')
 call SpaceVim#layers#load('shell')   
 call SpaceVim#layers#load('tools#screensaver')
@@ -57,7 +58,7 @@ let g:spaevim_enable_neomake = 0
 let g:spacevim_lint_on_the_fly = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
-let g:ale_python_flake8_options = "--max-line-length=100"
+let g:ale_python_flake8_options = "--max-line-length=120"
 
 "set t_8f=[38;2;%lu;%lu;%lum
 "set t_8b=[48;2;%lu;%lu;%lum
@@ -83,6 +84,7 @@ let g:spacevim_custom_plugins = [
 \ ['neomutt/neomutt', {'rtp': '/blob/master/doc/neomutt-syntax.vim'}],
 \ ['digitaltoad/vim-pug'],
 \ ['nathanaelkane/vim-indent-guides'],
+\ ['lervag/vimtex']
 \ ]
 
 let g:spacevim_disabled_plugins=[
