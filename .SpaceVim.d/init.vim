@@ -67,6 +67,8 @@ let g:spacevim_colorscheme = 'NeoSolarized'
 let g:spacevim_colorscheme_bg = 'light'
 let g:spacevim_statusline_separator = 'slant'
 
+" latex
+set conceallevel=0
 
 "indent guides
 let g:indent_guides_enable_on_vim_startup = 1
