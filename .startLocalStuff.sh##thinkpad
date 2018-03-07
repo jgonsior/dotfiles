@@ -2,5 +2,5 @@
 $HOME/.screenlayout/standard.sh&
 firefox-nightly&
 #(sleep 25 && syncthing-gtk) &
-(sleep 25 && telegram-desktop) &
+#(sleep 25 && telegram-desktop) &
 
