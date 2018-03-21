@@ -15,7 +15,8 @@ call SpaceVim#layers#load('autocomplete', {
         \ 'auto-completion-complete-with-key-sequence-delay' : 0.1,
         \ 'auto-completion-enable-snippets-in-popup' : 0
         \ })
-
+call SpaceVim#layers#load('denite')
+call SpaceVim#layers#load('ui')
 call SpaceVim#layers#load('checkers')
 call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('lang#markdown')
