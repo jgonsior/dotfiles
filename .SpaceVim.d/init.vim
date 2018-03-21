@@ -19,7 +19,9 @@ call SpaceVim#layers#load('lang#latex')
 call SpaceVim#layers#load('lang#xml')
 call SpaceVim#layers#load('shell')   
 call SpaceVim#layers#load('tools#screensaver')
-call SpaceVim#layers#load('autocomplete')
+"call SpaceVim#layers#load('autocomplete', {
+"\ 'auto-completion-enable-snippets-in-popup' : 0
+"\})
 call SpaceVim#layers#load('checkers')
 call SpaceVim#layers#load('cscope')
 call SpaceVim#layers#load('debug')
