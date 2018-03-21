@@ -28,6 +28,7 @@ call SpaceVim#layers#load('lang#markdown')
 call SpaceVim#layers#load('language-server-protocol')
 call SpaceVim#layers#load('lang/html')
 call SpaceVim#layers#load('vim')
+call SpaceVim#layers#load('colorscheme')
 
 let g:spacevim_plugin_bundle_dir = '$HOME/.dein_plugins'
 let g:spacevim_enable_vimfiler_welcome = 1
