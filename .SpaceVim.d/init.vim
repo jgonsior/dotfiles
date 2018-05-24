@@ -77,8 +77,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#EEE8D5' ctermbg=whit
 
 
 " keybindings
-let mapleader = "\-"
-"let maplocalleader = "\-"
+"let mapleader = " "
+let maplocalleader = "\<Space>"
 
 let g:spacevim_custom_plugins = [
 \ ['nginx/nginx', {'rtp': 'contrib/vim'}],
