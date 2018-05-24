@@ -101,7 +101,7 @@ set nocursorline
 
 
 set mouse=a
-
+set wrap
 
 " tabs
 set autoindent
