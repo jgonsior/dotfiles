@@ -65,6 +65,7 @@ let g:spacevim_statusline_separator = 'arrow'
 
 
 " airline
+let g:airline_theme="solarized"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['x', 'y', 'z', 'error']]
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
