@@ -100,8 +100,13 @@ antigen apply
 #export ZSH=$HOME/.oh-my-zsh
 
 PATH="$HOME/.local/bin:$PATH"
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+
+
 COMPLETION_WAITING_DOTS="true"
 plugins=(git colored-man-pages colorize mvn python virtualenvwrapper)
+
+
 
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
