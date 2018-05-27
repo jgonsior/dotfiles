@@ -63,6 +63,17 @@ let g:spacevim_colorscheme = 'NeoSolarized'
 let g:spacevim_colorscheme_bg = 'light'
 let g:spacevim_statusline_separator = 'arrow'
 
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['x', 'y', 'z', 'error']]
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+
+" search
+set ignorecase
+set smartcase
+
 " latex
 set conceallevel=0
 set wrap 
@@ -84,8 +95,13 @@ let g:spacevim_custom_plugins = [
             \ ['neomutt/neomutt', {'rtp': '/blob/master/doc/neomutt-syntax.vim'}],
             \ ['digitaltoad/vim-pug'],
             \ ['nathanaelkane/vim-indent-guides'],
-            \ ['lervag/vimtex']
+            \ ['lervag/vimtex'],
+            \ ['vim-airline/vim-airline'],
+            \ ['vim-airline/vim-airline-themes']
             \ ]
+
+call SpaceVim#layers#disable('core#statusline')
+call SpaceVim#layers#disable('core#tabline')
 
 let g:spacevim_disabled_plugins=[
             \ ['floobits/floobits-neovim'],
