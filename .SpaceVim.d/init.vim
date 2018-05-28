@@ -98,7 +98,8 @@ let g:spacevim_custom_plugins = [
             \ ['nathanaelkane/vim-indent-guides'],
             \ ['lervag/vimtex'],
             \ ['vim-airline/vim-airline'],
-            \ ['vim-airline/vim-airline-themes']
+            \ ['vim-airline/vim-airline-themes'],
+            \ ['editorconfig/editorconfig-vim']
             \ ]
 
 call SpaceVim#layers#disable('core#statusline')
