@@ -19,11 +19,6 @@
 
 [user]
     name = Julius Gonsior
-    email = julius@gaenseri.ch
-	signingkey = julius@gaenseri.ch
-
-[commit]
-	gpgsign = true
 
 [gpg]
     program = gpg2
