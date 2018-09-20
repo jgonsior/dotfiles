@@ -8,7 +8,7 @@ set postponed = "+drafts"
 
 set record = "+INBOX"
 set nm_record = yes
-set nm_record_tags = "inbox sent learn_ham learned"
+set nm_record_tags = "inbox sent"
 
 
 
@@ -79,7 +79,7 @@ hdr_order From: Subject: To: CC: BCC: Reply-To: Date: User-Agent: X-Mailer: X-La
 source ~/.mutt_colors
 
 set sort = threads
-set sort_aux = last-date-received
+set sort_aux = date-sent
 set pager_index_lines=10
 set mailcap_path = ~/.mail_configs/mailcap
 #set index_format = "%4C %Z %<[1d?%[  %H:%M]&%[ %b %d]>  %-18.18n    %s %* %?g?%g? "
@@ -145,13 +145,13 @@ macro index,pager A \
 
 # shortcuts
 # move message to archive and copy to ham folder
-macro index,pager A "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-inbox +archive +learn_ham\n" "archived message"
+macro index,pager A "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-inbox +archive\n" "archived message"
 
 # mark message as spam
-macro index,pager B "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-inbox +spam +learn_spam\n" "marked as spam"
+macro index,pager B "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-inbox +spam\n" "marked as spam"
 
 # mark false positive as true positive and copy to inbox
-macro index,pager G "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-spam +inbox +learn_ham +noSpam\n" "marked spam as ham"
+macro index,pager G "<enter-command>unset resolve<enter><clear-flag>N<enter-command>set resolve<enter><modify-labels>-spam +inbox +noSpam\n" "marked spam as ham"
 
 macro index,pager <f2> "<modify-labels>"
 
