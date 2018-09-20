@@ -1,27 +1,32 @@
 [general]
-accounts = uberspace
+accounts = fastmail
 pythonfile = ~/.offlineimap.py
 
-[Account uberspace]
-localrepository = uberspace-local
-remoterepository = uberspace-remote
+[Account fastmail]
+localrepository = fastmail-local
+remoterepository = fastmail-remote
 autorefresh = 5
 quick = -1
 
-postsynchook = ~/.tag_my_mail.sh
+#postsynchook = ionice -c 3 chrt --idle 0 /bin/sh -c "notmuch new && afew --tag --new && afew --move-mails && notmuch compact"
 
-[Repository uberspace-local]
+[Repository fastmail-local]
 type= Maildir
 localfolders = ~/.mail
 
-[Repository uberspace-remote]
+[Repository fastmail-remote]
 type = IMAP
-remotehost = grus.uberspace.de
-remoteuser = ragada
-remotepasseval = get_pass("uberspace")
+remotehost = imap.fastmail.com
+remoteuser = julius@gaenseri.ch
+remotepasseval = get_pass("urless/fastmail-app")
 
-idlefolders = ['INBOX', 'ifsr']
-maxconnections = 2
+idlefolders = ['INBOX']
+maxconnections = 10
 
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+utime_from_header = yes
+filename_use_mail_timestamp = yes
+
+internal_date_for_append_method = header
