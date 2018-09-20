@@ -1,6 +1,6 @@
 #!/bin/bash
 $HOME/.screenlayout/standard.sh&
-firefox-nightly&
+chromium&
 #(sleep 25 && syncthing-gtk) &
 #(sleep 5 && telegram-desktop) &
 #(sleep 5 && slack)&
