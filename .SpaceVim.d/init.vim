@@ -138,9 +138,10 @@ function IsProject(projectname)
 
     " use autoformat for the following projects only:
     function! SetupEnvironment()
-        if IsProject("coding/doxieGoLinuxWifi") || IsProject('coding/gaenserich') || IsProject('session-metrics-classification')
+        if IsProject("coding/doxieGoLinuxWifi") || IsProject('coding/gaenserich') || IsProject('coding/') || IsProject('coding/jiraStreamWorklog')
             let g:neoformat_run_all_formatters = 1
             let g:neoformat_enabled_javascript = ['jsbeautify']
+            let g:neoformat_enabled_java = ['astyle']
             augroup fmt
                 autocmd!
                 autocmd BufWritePre * undojoin | Neoformat
