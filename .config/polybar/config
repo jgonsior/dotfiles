@@ -1,10 +1,10 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222222
+background = #00000000
 background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
+foreground = #fefefe
+foreground-alt = #ff0000
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -27,14 +27,17 @@ line-size = 0
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 4
+module-margin-right = 0
 
 ;
-font-0 = "Source Code Pro Medium:pixelsize=10.5;2"
-font-1 = "FontAwesome:pixelsize=11;2"
-font-2 = ${self.font-0}
-font-3 = ${self.font-0}
+font-0 = "SF Pro Text:size=10:weight=bold:antialias=true;2"
+;font-0 = "Open Sans:pixelsize=10;3"
+;font-0 = "SF Pro Text:pixelsize=11;3"
+;font-1 = "DroidSans Nerd Font:pixelsize=11;2"
+font-1 = "FontAwesome:pixelsize=10;2"
+;font-2 = ${self.font-0}
+;font-3 = ${self.font-0}
 ;font-3 = ${self.font-0}
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
@@ -42,11 +45,11 @@ font-3 = ${self.font-0}
 
 modules-left = i3
 modules-center = xwindow
-modules-right = music xbacklight pavolume memory cpu temperature network date
+modules-right = music xbacklight pulseaudio memory cpu temperature network date
 
 tray-position = right
-tray-padding = 0
-;tray-transparent = true
+tray-padding = 1
+tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = i3
@@ -142,7 +145,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 label = %percentage_used%%
 
 
@@ -155,16 +158,17 @@ time = "%H:%M "
 
 label = %date% %time%
 
-[module/pavolume]
-type = custom/script
-tail = true
-label = %output%
-exec = ~/.config/polybar/pavolume.sh --listen
-exec-if = pacmd list-sinks | grep -q available
-click-right = exec pavucontrol
-click-left = ~/.config/polybar/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/pavolume.sh --up
-scroll-down = ~/.config/polybar/pavolume.sh --down
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+label-muted =   
+label-muted-foreground = #666
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/battery]
 type = internal/battery
@@ -201,24 +205,25 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-4 = 
-ramp-3 = 
-ramp-2 = 
-ramp-1 = 
-ramp-0 = 
+ramp-4 =   
+ramp-3 =   
+ramp-2 =   
+ramp-1 =   
+ramp-0 =   
 
 
 [module/network]
 type = internal/network
 interface = ${file:$HOME/.config/polybar/network:eno1}
 interval = 3
-accumulate-stats = true
+#accumulate-stats = true
 
-label-connected =  %upspeed:4:9%  %downspeed:4:9%
+label-connected =  %downspeed% |  %upspeed%
+#label-connected =  %upspeed:4:9%  %downspeed:4:9%
 
 [settings]
 screenchange-reload = true
