@@ -3,7 +3,7 @@
 background = #00000000
 background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = #fefefe
+foreground = #dfdfdf
 foreground-alt = #ff0000
 primary = #ffb52a
 secondary = #e60053
