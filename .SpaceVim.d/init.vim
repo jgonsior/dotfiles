@@ -59,13 +59,12 @@ let g:ale_python_flake8_options = "--max-line-length=120"
 "set t_8b=[48;2;%lu;%lu;%lum
 
 "ui
-let g:spacevim_colorscheme = 'NeoSolarized'
-let g:spacevim_colorscheme_bg = 'light'
+let g:spacevim_colorscheme = 'onedark'
+let g:spacevim_colorscheme_bg = 'dark'
 let g:spacevim_statusline_separator = 'arrow'
 
-
 " airline
-let g:airline_theme="solarized"
+let g:airline_theme="lucius"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['x', 'y', 'z', 'error']]
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
@@ -83,7 +82,7 @@ set wrap
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=7 ctermbg=7
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#EEE8D5' ctermbg=white
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg='#2C323C' ctermbg=8
 
 
 " keybindings
@@ -99,7 +98,7 @@ let g:spacevim_custom_plugins = [
             \ ['lervag/vimtex'],
             \ ['vim-airline/vim-airline'],
             \ ['vim-airline/vim-airline-themes'],
-            \ ['editorconfig/editorconfig-vim']
+            \ ['editorconfig/editorconfig-vim'],
             \ ]
 
 call SpaceVim#layers#disable('core#statusline')
