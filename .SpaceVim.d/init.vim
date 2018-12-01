@@ -70,6 +70,9 @@ let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['x', 'y', 'z', 'er
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 
+"let g:tmuxline_powerline_separators = 0
+"set Tmuxline airline_visual
+
 " search
 set ignorecase
 set smartcase
@@ -100,6 +103,7 @@ let g:spacevim_custom_plugins = [
             \ ['vim-airline/vim-airline-themes'],
             \ ['editorconfig/editorconfig-vim'],
             \ ]
+            "\ ['edkolev/tmuxline.vim'],
 
 call SpaceVim#layers#disable('core#statusline')
 call SpaceVim#layers#disable('core#tabline')
