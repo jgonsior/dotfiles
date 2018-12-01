@@ -151,6 +151,8 @@ alias notes="cd ~/documents/n/notes; nvim bullet.md"
 
 export MATES_DIR=~/.contacts/contacts
 
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
