@@ -1,6 +1,6 @@
 rofi.sidebar-mode:  true
-rofi.theme: sidestyle.rasi
-rofi.show-icons: false
+rofi.theme: onedark.rasi
+rofi.show-icons: true
 rofi.fuzzy: true
 rofi.threads: 2
 rofi.levenshtein-sort: true
