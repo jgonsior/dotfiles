@@ -1,9 +1,9 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #00000000
-background-alt = #6eaafb
+background = #000
+background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = #b2b2b2
+foreground = #eee
 foreground-alt = #ff0000
 primary = #ffb52a
 secondary = #e60053
@@ -27,17 +27,15 @@ line-size = 0
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 ;
-font-0 = "SF Pro Text:size=10:weight=bold:antialias=true;2"
-;font-0 = "Open Sans:pixelsize=10;3"
-;font-0 = "SF Pro Text:pixelsize=11;3"
-;font-1 = "DroidSans Nerd Font:pixelsize=11;2"
-font-1 = "FontAwesome:pixelsize=10;2"
-;font-2 = ${self.font-0}
-;font-3 = ${self.font-0}
+;font-0 = "Source Code Pro Medium:pixelsize=10.5;2"
+font-0 = "SF Pro Text:pixelsize=10.5;2"
+font-1 = "FontAwesome:pixelsize=11;2"
+font-2 = ${self.font-0}
+font-3 = ${self.font-0}
 ;font-3 = ${self.font-0}
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
@@ -45,11 +43,11 @@ font-1 = "FontAwesome:pixelsize=10;2"
 
 modules-left = i3
 modules-center = xwindow
-modules-right = music xbacklight pulseaudio memory cpu temperature network date
+modules-right = music xbacklight pulseaudio memory cpu temperature network network date
 
 tray-position = right
 tray-padding = 1
-tray-transparent = true
+;tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = i3
@@ -58,8 +56,6 @@ tray-transparent = true
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
-
-separator = "  %{F#6eaafb}//%{F-}  "
 
 [bar/beamer]
 monitor = "HDMI3"
@@ -93,13 +89,12 @@ wrapping-scroll = false
 pin-workspaces = true
 padding = 1
 
-label-mode-padding = 1
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = #282c34
 label-focused-background = ${colors.background-alt}
 label-focused-padding = ${self.padding}
 
@@ -142,13 +137,13 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 label = %percentage_used%%
 
 
@@ -223,10 +218,9 @@ ramp-0 = 
 type = internal/network
 interface = ${file:$HOME/.config/polybar/network:eno1}
 interval = 3
-#accumulate-stats = true
+accumulate-stats = true
 
-label-connected =  %downspeed%  %upspeed%
-#label-connected =  %upspeed:4:9%  %downspeed:4:9%
+label-connected =  %upspeed:4:9%  %downspeed:4:9%
 
 [settings]
 screenchange-reload = true
