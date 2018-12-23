@@ -1,5 +1,5 @@
 rofi.sidebar-mode:  false
-rofi.theme:         sidestyle.calc
+rofi.theme:         onedark.calc
 rofi.show-icons: false
 rofi.fuzzy: true
 rofi.threads: 2

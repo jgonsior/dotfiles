@@ -31,7 +31,7 @@ path=/home/monkey/.mail
 [user]
 name=Julius Gonsior
 primary_email=julius@gaenseri.ch
-other_email=julius.gonsior@mailbox.tu-dresden.de;julius@ifsr.de;julgo056@student.liu.se;*@gaenseri.ch;s5968580@mail.zih.tu-dresden.de;ragada@grus.uberspace.de;julius.gonsior@tu-dresden.de;julius@esn.tu-dresden.de;
+other_email=julius.gonsior@mailbox.tu-dresden.de;julius@ifsr.de;julgo056@student.liu.se;*@gaenseri.ch;s5968580@mail.zih.tu-dresden.de;ragada@grus.uberspace.de;julius.gonsior@tu-dresden.de;julius@esn.tu-dresden.de;finanzer@esn.tu-dresden.de;
 
 # Configuration for "notmuch new"
 #
@@ -48,8 +48,7 @@ other_email=julius.gonsior@mailbox.tu-dresden.de;julius@ifsr.de;julgo056@student
 #		in the mail store.
 #
 [new]
-tags=inbox;unread;new;
-ignore=learn_ham;learn_spam
+tags=new
 
 # Search configuration
 #
