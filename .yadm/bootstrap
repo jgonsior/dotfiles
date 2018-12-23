@@ -1,21 +1,21 @@
 #!/bin/bash
 
-cd "$HOME"
+#cd "$HOME"
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "Init submodules"
-yadm submodule update --recursive --init
+#echo "Init submodules"
+#yadm submodule update --recursive --init
 
 # download spacevim
-curl -sLf https://spacevim.org/install.sh | bash -s -- -i
+#curl -sLf https://spacevim.org/install.sh | bash -s -- -i
 
 
 # install powerline
-sudo pacman -S powerline-status
+#sudo pacman -S powerline-status
 
 # instal tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+#git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k

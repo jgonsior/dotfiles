@@ -1,5 +1,5 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
-#exec compton -cb -I 1
+exec compton
 floating_modifier $mod
 
 bindsym $mod+Return exec tilix 
