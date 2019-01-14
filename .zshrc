@@ -106,14 +106,10 @@ PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git colored-man-pages colorize mvn python virtualenvwrapper)
 
-
-
-export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export GOPATH=$HOME/.go
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/.cargo/bin
-# npm
 NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 PATH="$HOME/.bin/:$PATH"
@@ -147,7 +143,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 
 alias notes="cd ~/documents/n/notes; nvim bullet.md"
-
+export TODOTXT_DEFAULT_ACTION=ls
+alias t='todo-txt'
+alias todo.sh='todo-txt'
 
 export MATES_DIR=~/.contacts/contacts
 
