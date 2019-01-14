@@ -24,3 +24,12 @@ fi
 
 export PATH=$PATH:/home/jgonsior/.fabric8/bin
 #eval $(gpg-agent)
+
+alias python='python3.6' 
+alias pip='pip3'
+
+# If running from tty1 start sway
+#if [ $(tty) = "/dev/tty1" ]; then
+#	sway
+#	exit 0
+#fi

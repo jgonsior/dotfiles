@@ -7,5 +7,7 @@ redshift-gtk&
 qtpass&
 nm-applet --sm-disable&
 #(sleep 25 && gajim) &
+#(sleep 25 && spotify) &
+#(sleep 25 && slack) &
 cat $HOME/.config/i3/config.local $HOME/.config/i3/config.base > $HOME/.config/i3/config
-exec i3 -V
+exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) i3 -V

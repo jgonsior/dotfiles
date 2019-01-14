@@ -1,6 +1,7 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
 #exec compton  -b -I 1 --backend glx -cC --detect-client-leader -l -3 -t -3 -r 3
 exec compton
+exec twmnd 
 floating_modifier $mod
 
 bindsym $mod+Return exec tilix 
@@ -54,7 +55,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4; layout tabbed
+bindsym $mod+4 workspace number 4
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
@@ -69,7 +70,7 @@ workspace_auto_back_and_forth yes
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4; layout tabbed
+bindsym $mod+Shift+4 move container to workspace number 4
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
