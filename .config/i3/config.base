@@ -1,5 +1,4 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
-#exec compton  -b -I 1 --backend glx -cC --detect-client-leader -l -3 -t -3 -r 3
 exec compton
 exec twmnd 
 floating_modifier $mod
