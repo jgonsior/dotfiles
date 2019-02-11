@@ -1,6 +1,6 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #00000000
+background = #282C34
 background-alt = #6eaafb
 ;foreground = ${xrdb:color7:#222}
 foreground = #b2b2b2
@@ -49,7 +49,7 @@ modules-right = music xbacklight pulseaudio memory cpu temperature network date
 
 tray-position = right
 tray-padding = 1
-tray-transparent = true
+tray-transparent = false
 ;tray-background = #0063ff
 
 ;wm-restack = i3
@@ -109,7 +109,7 @@ label-unfocused-padding = ${self.padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = #404552
 label-visible-padding = ${self.padding}
 
 ; urgent = Workspace with urgency hint set
