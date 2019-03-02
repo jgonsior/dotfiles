@@ -3,6 +3,7 @@ let g:spacevim_realtime_leader_guide = 1
 call SpaceVim#layers#load('lang#java')
 call SpaceVim#layers#load('lang#javascript')
 call SpaceVim#layers#load('lang#python')
+call SpaceVim#layers#load('lang#latex')
 
 call SpaceVim#layers#load('autocomplete', {
             \ 'auto-completion-return-key-behavior' : 'nil',
@@ -145,10 +146,10 @@ function IsProject(projectname)
             let g:neoformat_run_all_formatters = 1
             let g:neoformat_enabled_javascript = ['jsbeautify']
             let g:neoformat_enabled_java = ['astyle']
-            augroup fmt
-                autocmd!
-                autocmd BufWritePre * undojoin | Neoformat
-            augroup END
+            " augroup fmt
+                " autocmd!
+                " autocmd BufWritePre * undojoin | Neoformat
+            " augroup END
         endif
     endfunction
 
