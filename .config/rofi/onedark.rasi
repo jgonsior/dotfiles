@@ -39,6 +39,8 @@ mainbox {
     padding: 0.5%;
     expand: false;
     background-color: #282c34dd;
+    border: 1px;
+    border-color: @emphasis;
 }
 
 inputbar {
@@ -71,12 +73,12 @@ listview {
 element {
     padding: 3px;
     text-color: @text-alt;
-    highlight: bold #6eaafb; /*#95ee8f;  green */
+    highlight: bold #eb6e67; /*#95ee8f;  green */
     border-radius: 0px;
 }
 
 element selected {
-    background-color: @emphasis;
+    background-color: #404552;/*#4084D6;*/
     text-color: @text;
 }
 
