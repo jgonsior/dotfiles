@@ -1,6 +1,6 @@
 export LANG="en_US.UTF-8"
 source $HOME/.antigen.zsh
-#export TERM="xterm-256color"
+# export TERM="tmux-256color"
 antigen use oh-my-zsh
 
 antigen bundle git

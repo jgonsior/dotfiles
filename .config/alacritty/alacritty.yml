@@ -18,11 +18,9 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 0
-    lines: 0
-    # columns: 80
-    # lines: 24
-#
+    columns: 80
+    lines: 24
+
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
@@ -39,10 +37,6 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  #
-  # Values for `decorations` (macOS only):
-  #     - transparent: Title bar, transparent background and title bar buttons
-  #     - buttonless: Title bar, transparent background, but no title bar buttons
   decorations: none 
 
   # When true, alacritty starts maximized.
@@ -112,7 +106,7 @@ font:
     style: Italic
 
   # Point size
-  size: 11
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -127,6 +121,7 @@ font:
     x: 0
     y: 0
 
+# Display the time it takes to redraw each frame.
 render_timer: false
 
 # Keep the log file after quitting Alacritty.
@@ -135,6 +130,7 @@ persistent_logging: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+# Colors (Tomorrow Night Bright)
 # Colors (One Dark)
 colors:
   # Default colors
@@ -190,7 +186,6 @@ colors:
 visual_bell:
   animation: EaseOutExpo
   duration: 0
-  color: '0xffffff'
 
 # Background opacity
 #
@@ -239,7 +234,7 @@ mouse:
     #
     # These are the modifiers that need to be held down for opening URLs when clicking
     # on them. The available modifiers are documented in the key binding section.
-    modifiers: Shift
+    #modifiers: Control|Shift
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -247,14 +242,14 @@ selection:
   # When set to `true`, selected text will be copied to both the primary and
   # the selection clipboard. Otherwise, it will only be copied to the selection
   # clipboard.
-  save_to_clipboard: true
+  save_to_clipboard: false
 
 dynamic_title: true
 
 cursor:
   # Cursor style
   #
-  # Values for `style`:
+  # Values for 'style':
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
