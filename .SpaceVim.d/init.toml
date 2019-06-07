@@ -90,8 +90,7 @@ tmuxline_separators = "arrow"
 
 [[custom_plugins]]
 name= "lervag/vimtex"
-#
-# [[custom_plugins]]
-# name = "lilydjwg/colorizer"
-# on_cmd = ["ColorHighlight", "ColorToggle"]
-#gg,2 merged = false
+
+
+[[custom_plugins]]
+name = "neoclide/coc-python"
