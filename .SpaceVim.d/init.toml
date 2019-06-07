@@ -1,0 +1,97 @@
+# This is a basic configuration example for SpaceVim
+# All SpaceVim options are below [options] snippet
+
+[options]
+colorscheme = "one"
+colorscheme_bg = "dark"
+enable_guicolors = true
+statusline_separator = "arrow"
+statusline_inactive_separator = "arrow"
+buffer_index_type = 4
+enable_tabline_filetype_icon = true
+enable_statusline_mode = false
+disable_pluins=['']
+
+plugin_bundle_dir = "$HOME/.dein_plugins"
+
+autocomplete_method = 'coc'
+
+bootstrap_before = "myspacevim#before"
+bootstrap_after= "myspacevim#after"
+
+# search
+ignorecase = true
+smartcase = true
+
+# latex
+conceallevel = 0
+wrap = true
+
+[[layers]]
+name = 'autocomplete'
+auto-completion-return-key-behavior = "complete"
+auto-completion-tab-key-behavior = "smart"
+
+[[layers]]
+name = 'colorscheme'
+
+[[layers]]
+name = 'lang#java'
+
+[[layers]]
+name = 'lang#python'
+format-on-save = 1
+
+[[layers]]
+name = 'lang#javascript'
+#
+# [[layers]]
+# name = 'fzf'
+#
+[[layers]]
+name = 'ui'
+
+[[layers]]
+name = 'checkers'
+
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = "lang#r"
+
+[[layers]]
+name='lsp'
+filetypes = ['python', 'bash', 'javascript']
+
+[layers.override_cmd]
+bash = ["bash-language-server", "start"]
+
+[[layers]]
+name = "lang#dockerfile"
+
+
+[[layers]]
+name = "lang#sh"
+
+[[layers]]
+name = "fzf"
+
+[[layers]]
+name = "tools#zeal"
+
+[[layers]]
+name = "tmux"
+tmuxline_separators = "arrow"
+
+
+# [[custom_plugins]]
+# name = "edkolev/tmuxline.vim"
+
+[[custom_plugins]]
+name= "lervag/vimtex"
+#
+# [[custom_plugins]]
+# name = "lilydjwg/colorizer"
+# on_cmd = ["ColorHighlight", "ColorToggle"]
+#gg,2 merged = false
