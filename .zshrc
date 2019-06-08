@@ -116,36 +116,33 @@ PATH="$HOME/.bin/:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your configuration
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-
+#
 # fix tmux env renewment
-if [ -n "$TMUX" ]; then
-    function refresh {
-        sshauth=$(tmux show-environment | grep "^SSH_AUTH_SOCK")
-        if [ $sshauth ]; then
-            export $sshauth
-        fi
-        display=$(tmux show-environment | grep "^DISPLAY")
-        if [ $display ]; then
-            export $display
-        fi
-    }
-else
-    function refresh { }
-fi
-
-function preexec {
+# if [ -n "$TMUX" ]; then
+    # function refresh {
+        # sshauth=$(tmux show-environment | grep "^SSH_AUTH_SOCK")
+        # if [ $sshauth ]; then
+            # export $sshauth
+        # fi
+        # display=$(tmux show-environment | grep "^DISPLAY")
+        # if [ $display ]; then
+            # export $display
+        # fi
+    # }
+# else
+    # function refresh { }
+# fi
+#
+# function preexec {
     # Refresh environment if inside tmux
-    refresh
-}
-
+    # refresh
+# }
+#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 
 alias notes="cd ~/documents/n/notes; nvim bullet.md"
-export TODOTXT_DEFAULT_ACTION=ls
-alias t='todo-txt'
-alias todo.sh='todo-txt'
 
 export MATES_DIR=~/.contacts/contacts
 
