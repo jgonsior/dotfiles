@@ -3,7 +3,7 @@ exec compton
 exec twmnd 
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec tilix 
 bindsym $mod+e exec mousepad
 
 # lock screen
