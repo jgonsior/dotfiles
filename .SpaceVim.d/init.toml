@@ -27,6 +27,7 @@ smartcase = true
 conceallevel = 0
 wrap = true
 
+
 [[layers]]
 name = 'autocomplete'
 auto-completion-return-key-behavior = "complete"
