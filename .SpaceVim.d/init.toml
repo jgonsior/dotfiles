@@ -17,7 +17,7 @@ plugin_bundle_dir = "$HOME/.dein_plugins"
 autocomplete_method = 'coc'
 
 bootstrap_before = "myspacevim#before"
-bootstrap_after= "myspacevim#after"
+bootstrap_after = "myspacevim#after"
 
 # search
 ignorecase = true
