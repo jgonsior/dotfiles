@@ -45,10 +45,7 @@ format-on-save = 1
 
 [[layers]]
 name = 'lang#javascript'
-#
-# [[layers]]
-# name = 'fzf'
-#
+
 [[layers]]
 name = 'ui'
 

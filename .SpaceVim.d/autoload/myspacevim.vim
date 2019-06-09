@@ -1,3 +1,6 @@
+" yank
+set clipboard=unnamed
+
 " keybindings
 let mapleader = ","
 let maplocalleader = ",,"
@@ -6,7 +9,7 @@ let maplocalleader = ",,"
 set ignorecase
 set smartcase
 "
-" set mouse = a
+set mouse=a
 vmap <LeftRealease> "*ygv"
 set wrap
 "
@@ -26,20 +29,23 @@ endfunction
 
 
 call coc#config('coc.preferences', {
-			\ "autoTrigger": "always",
-			\ "maxCompleteItemCount": 10,
-			\ "codeLens.enable": 1,
-			\ "diagnostic.virtualText": 1,
-			\})
+      \ "autoTrigger": "always",
+      \ "maxCompleteItemCount": 10,
+      \ "codeLens.enable": 1,
+      \ "diagnostic.virtualText": 1,
+      \})
 
 let s:coc_extensions = [
-			\ 'coc-dictionary',
-			\ 'coc-json',
-			\ 'coc-ultisnips',
-			\ 'coc-tag',
-			\]
+      \ 'coc-dictionary',
+      \ 'coc-json',
+      \ 'coc-ultisnips',
+      \ 'coc-tag',
+      \]
 
 for extension in s:coc_extensions
-	call coc#add_extension(extension)
+  call coc#add_extension(extension)
 endfor
 
+
+" Mapping selecting mappings
+nmap <leader> <b> :FzfBuffers --> not working!
