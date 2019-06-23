@@ -7,7 +7,7 @@ bindsym $mod+Return exec tilix
 bindsym $mod+e exec mousepad
 
 # lock screen
-bindsym $mod+F12 exec i3lock-fancy -p 
+bindsym $mod+F12 exec i3lock 
 
 # kill focused window
 bindsym $mod+Shift+a kill
