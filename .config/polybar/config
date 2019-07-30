@@ -32,7 +32,7 @@ module-margin-right = 0
 
 ;
 font-0 = "SF Pro Text:size=10.5:weight=bold:antialias=true;2"
-;font-0 = "Open Sans:pixelsize=10;3"
+; font-0 = "SauceCodePro Nerd Font:weight=bold:pixelsize=11;3"
 ;font-0 = "SF Pro Text:pixelsize=11;3"
 ;font-1 = "DroidSans Nerd Font:pixelsize=11;2"
 ; font-1 = "Font Awesome:pixelsize=10;2"
