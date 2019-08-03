@@ -1,36 +1,24 @@
 [general]
 status_path = "~/.config/vdirsyncer/status"
 
-#[pair nc_cal]
-#a = "nc_cal_local"
-#b = "nc_cal_remote"
-#collections = ["from a", "from b"]
-
-#metadata = ["displayname", "color"]
-
-#[storage nc_cal_local]
-#type = "filesystem"
-#path = "~/.calendars/"
-#fileext = ".ics"
-
-#[storage nc_cal_remote]
-#type = "caldav"
-#url = "https://nc.gaenseri.ch/remote.php/dav/"
-#username = "julius"
-
-
-[pair nc_contacts]
-a = "nc_con_local"
-b = "nc_con_remote"
+[pair calendar]
+a = "fastmail_cal"
+b = "local_cal"
 collections = ["from a", "from b"]
+metadata = ["color", "displayname"]
 
-[storage nc_con_local]
-type = "filesystem"
-path ="~/.contacts"
-fileext = ".vcf"
+[storage local_cal]
+type="singlefile"
+path="~/.calendar/%s.ics"
 
-[storage nc_con_remote]
+[storage fastmail_cal]
+type = "caldav"
+url = "https://caldav.fastmail.com/"
+username = "julius@gaenseri.ch"
+password = "plhw8djb95uchxv9"
+
+[storage fastmail_card]
 type = "carddav"
-url = "https://nc.gaenseri.ch/remote.php/dav/"
-username = "julius"
-password.fetch = ["command", "pass", "server/luffy/nc.gaenseri.ch/julius"]
+url = "https://carddav.fastmail.com/"
+username = "julius@gaenseri.ch"
+password = "plhw8djb95uchxv9"
