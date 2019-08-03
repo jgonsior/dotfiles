@@ -20,10 +20,17 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+
+" use undofile
+set undofile
+
+set statusline^=%{coc#status()}
+
 function! myspacevim#before() abort
     call SpaceVim#custom#SPCGroupName(['G'], '+FZF')
     call SpaceVim#custom#SPC('nore', ['G', 'f'], 'FzfFiles', 'FzfFiles', 1)
     call SpaceVim#custom#SPC('nore', ['G', 'b'], 'Fzfbuffer', 'Fzfbuffer', 1)
+    let g:spacevim_autocomplete_method='coc'
 endfunction
 
 function! myspacevim#after() abort
@@ -33,11 +40,11 @@ function! myspacevim#after() abort
         \ "codeLens.enable": 1,
         \ "diagnostic.virtualText": 1,
         \})
-
   let s:coc_extensions = [
+        'coc-python',
         \ 'coc-dictionary',
         \ 'coc-json',
-        \ 'coc-ultisnips',
+        \ 'coc-snippets',
         \ 'coc-tag',
         \]
 

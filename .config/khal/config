@@ -1,15 +1,12 @@
 [calendars]
 
-[[nc_cal_local]]
-path = ~/.calendars/*
+[[cal_local]]
+path = ~/.calendar/*
 type = discover
 
 [locale]
 timeformat = %H:%M
-dateformat = %d.%m.%y
-longdateformat = %d.%m.%y
-datetimeformat = %d.%m.%y %H:%M
-longdatetimeformat = %d.%m.%y %H:%M
-
-[view]
-theme = light
+dateformat = %d/%m/%Y
+longdateformat = %d/%m/%Y
+datetimeformat = %d/%m/%Y %H:%M
+longdatetimeformat = %d/%m/%Y %H:%M
