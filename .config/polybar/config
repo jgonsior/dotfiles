@@ -1,28 +1,40 @@
 [colors]
-;background = ${xrdb:color0:#222}
-background = #282C34
+; background = #282C34
+; background-alt = #6eaafb
+; foreground = #b2b2b2
+; foreground-alt = #ff0000
+; primary = #ffb52a
+; secondary = #E06C75
+; alert = #bd2c40
+background = #FAFAFA
 background-alt = #6eaafb
-;foreground = ${xrdb:color7:#222}
-foreground = #b2b2b2
-foreground-alt = #ff0000
+foreground = #2e2e2e
+foreground-alt = #424242
 primary = #ffb52a
-secondary = #E06C75
+secondary = #00AF5F
 alert = #bd2c40
+# icons: http://kageurufu.net/icons.pdf
+
+
+acolor = #ffb300
+curgent = #e53935
+coccupied = #1e88e5
 
 [bar/main]
 monitor = "${env:MONITOR:}"
 #monitor-fallback = "VGA1"
 width = 100%
-height = 24
+height = 20
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
 fixed-center = false
-
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 0
+border-size = 4
+border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 0
@@ -30,18 +42,21 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 ;
-font-0 = "SF Pro Text:size=10.5:weight=bold:antialias=true;2"
+font-0 = "SF Pro Text:size=11:weight=bold:antialias=true;2"
 ; font-0 = "SauceCodePro Nerd Font:weight=bold:pixelsize=11;3"
 ;font-0 = "SF Pro Text:pixelsize=11;3"
 ;font-1 = "DroidSans Nerd Font:pixelsize=11;2"
-; font-1 = "Font Awesome:pixelsize=10;2"
-font-1 = "Icons:pixelsize=10;2"
+font-1 = "Icons:pixelsize=13;2"
+; font-1 = "Font Awesome 5 Free:pixelsize=10;2"
 ;font-2 = ${self.font-0}
 ;font-3 = ${self.font-0}
 ;font-3 = ${self.font-0}
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
+; font-2 = siji:pixelsize=10;1
 
 
 modules-left = i3
@@ -50,17 +65,18 @@ modules-right = music xbacklight pulseaudio memory cpu temperature network date
 
 tray-position = right
 tray-padding = 1
-tray-transparent = true
+; tray-transparent = true
 ;tray-background = #0063ff
 
-;wm-restack = i3
+; wm-restack = i3
 
 ;override-redirect = true
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
-separator = "  %{F#6eaafb}//%{F-}  "
+; separator = "  %{F#6eaafb}//%{F-}  "
+separator = "      "
 
 [bar/beamer]
 monitor = "HDMI3"
@@ -89,32 +105,32 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
+content-padding = 0
+content-foreground = ${colors.secondary}
+content-backgound= ${colors.foreground}
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-padding = 1
+padding = 2
+margin = 0
+
+
 
 label-mode-padding = 1
-label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = #282c34
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.secondary}
+label-focused-foreground = ${colors.background}
 label-focused-padding = ${self.padding}
-label-focused-underline = #ff0000
+label-focused-underline = ${colors.background-alt}
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = ${self.padding}
 
-; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = #404552
 label-visible-padding = ${self.padding}
 
-; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = ${self.padding}
@@ -160,7 +176,7 @@ interval = 5
 
 date = "%Y-%m-%d"
 time = "%H:%M "
-
+format-prefix = " "
 label = %date% %time%
 
 [module/pulseaudio]
@@ -204,7 +220,7 @@ animation-charging-framerate = 750
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-
+format-prefix = " "
 format = <label>
 format-underline = #f50a4d
 format-warn = <label-warn>
@@ -227,7 +243,7 @@ interface = ${file:$HOME/.config/polybar/network:eno1}
 interval = 3
 #accumulate-stats = true
 
-label-connected =  %downspeed%  %upspeed%
+label-connected =  %downspeed%  %upspeed%
 #label-connected =  %upspeed:4:9%  %downspeed:4:9%
 
 [settings]
