@@ -1,6 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'joshdick/onedark.vim'
 Plug 'benmills/vimux'
 Plug 'janko/vim-test'
 Plug 'liuchengxu/vista.vim'
@@ -8,7 +7,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'farmergreg/vim-lastplace'
-
+Plug 'lervag/vimtex'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'vim-airline/vim-airline'
@@ -48,6 +47,8 @@ Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rakr/vim-one'
 Plug 'edkolev/tmuxline.vim'
+Plug 'NLKNguyen/papercolor-theme'
+
 
 call plug#end()
 
@@ -61,8 +62,24 @@ endif
 
 set clipboard=unnamed
 
+set showtabline=2
 syntax on
-colorscheme one
+colorscheme one 
+set background=light
+let g:PaperColor_Theme_Options = {
+            \     'theme': {
+            \     'default': {
+            \       'transparent_background': 0,
+            \ 'allow_bold': 1,
+            \ 'allow_italic': 1,
+            \     }
+            \   },
+            \ 'language': {
+            \ 'python': {
+            \ 'highlight_builtins':1,
+            \}
+            \}
+            \ }
 let g:one_allow_italics = 1
 
 " keybindings
@@ -71,7 +88,7 @@ let maplocalleader = " " " space
 
 
 function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
+    return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
@@ -79,7 +96,6 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 set noswapfile
 
 
-set showtabline =2
 " airline
 " let g:airline_theme='one'
 " let g:airline#extensions#tabline#enabled = 1
@@ -100,7 +116,9 @@ let g:lightline = {
 let g:lightline.tabline          = {'left': [['buffers']], 'right': [['cocstatus']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
-let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#show_number = 1
+" autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
+
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -187,7 +205,7 @@ augroup END
 
 nmap <LocalLeader>f :GFiles<CR>
 nmap <LocalLeader>b :Buffer<CR>
-nmap <LocalLeader>l :Lines<CR>
+nmap <LocalLeader>L :Lines<CR>
 nmap <LocalLeader>h :History<CR>
 nmap <LocalLeader>v :Vista finder<CR>
 
