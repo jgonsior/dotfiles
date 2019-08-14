@@ -24,7 +24,7 @@ coccupied = #1e88e5
 monitor = "${env:MONITOR:}"
 #monitor-fallback = "VGA1"
 width = 100%
-height = 20
+height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -50,7 +50,7 @@ font-0 = "SF Pro Text:size=11:weight=bold:antialias=true;2"
 ; font-0 = "SauceCodePro Nerd Font:weight=bold:pixelsize=11;3"
 ;font-0 = "SF Pro Text:pixelsize=11;3"
 ;font-1 = "DroidSans Nerd Font:pixelsize=11;2"
-font-1 = "Icons:pixelsize=13;2"
+font-1 = "Icons:pixelsize=13:weight=bold;2"
 ; font-1 = "Font Awesome 5 Free:pixelsize=10;2"
 ;font-2 = ${self.font-0}
 ;font-3 = ${self.font-0}
@@ -89,7 +89,7 @@ inherit = bar/main
 type = custom/script
 interval = 2
 
-label = %output:0:45:...%
+label = %output:0:100:...%
 exec = ~/.config/polybar/mpris.sh
 click-left = playerctl previous
 click-middle = playerctl play-pause
@@ -98,7 +98,7 @@ click-right = playerctl next
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:66:...%
+label = %title:0:400:...%
 
 [module/i3]
 type = internal/i3
@@ -110,7 +110,7 @@ content-foreground = ${colors.secondary}
 content-backgound= ${colors.foreground}
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-padding = 2
+padding = 1
 margin = 0
 
 
