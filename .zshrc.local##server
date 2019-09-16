@@ -1,0 +1,1 @@
+export SSH_AUTH_SOCK=/home/julius/.gnupg/S.gpg-agent.ssh
