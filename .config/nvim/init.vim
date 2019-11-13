@@ -102,7 +102,7 @@ endfunction
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 set noswapfile
-
+set hidden
 
 " airline
 " let g:airline_theme='one'
@@ -124,9 +124,8 @@ let g:lightline = {
 let g:lightline.tabline          = {'left': [['buffers']], 'right': [['cocstatus']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
-let g:lightline#bufferline#show_number = 1
-" autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
-
+let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#unicode_symbols = 1
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
