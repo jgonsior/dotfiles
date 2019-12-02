@@ -21,7 +21,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-vimtex', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-vimtex', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-cost', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
@@ -45,6 +45,7 @@ Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-docker', {'do': 'yarn install --frozen-lockfile'}
 
@@ -273,6 +274,9 @@ let g:NERDCompactSexyComs = 1
 
 vnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 nnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
+
+
+
 
 " coc
 set nobackup
