@@ -14,3 +14,6 @@ export GPG_TTY=$(tty)
 # Refresh gpg-agent tty in case user switches into an X session
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
+export PATH=/opt/texlive/2019/bin/x86_64-linux:$PATH
+export MANPATH=/opt/texlive/2019/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/opt/texlive/2019/texmf-dist/doc/info:$INFOPATH

@@ -59,6 +59,10 @@ Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'miyakogi/seiya.vim'
 
+Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
+
+
 call plug#end()
 
 
@@ -90,6 +94,11 @@ set background=light
             " \}
             " \ }
 let g:one_allow_italics = 1
+
+
+" goyo
+let g:goyo_height = "90%"
+
 
 " keybindings
 let mapleader = ","
@@ -152,14 +161,14 @@ set noshowmode
 map <F2> :Vista!! <CR>
 
 
-"set spell spelllang=en,de
+setlocal spell spelllang=en_us,de
 
 " search
 set ignorecase
 set smartcase
 
 " latex
-set conceallevel=0
+set conceallevel=2
 set wrap 
 set scrolloff=5
 
