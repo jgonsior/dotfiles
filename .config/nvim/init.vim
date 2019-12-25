@@ -56,6 +56,7 @@ Plug 'rakr/vim-one'
 Plug 'edkolev/tmuxline.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
+Plug 'miyakogi/seiya.vim'
 
 call plug#end()
 
@@ -73,20 +74,20 @@ set showtabline=2
 syntax on
 colorscheme one 
 set background=light
-let g:PaperColor_Theme_Options = {
-            \     'theme': {
-            \     'default': {
-            \       'transparent_background': 0,
-            \ 'allow_bold': 1,
-            \ 'allow_italic': 1,
-            \     }
-            \   },
-            \ 'language': {
-            \ 'python': {
-            \ 'highlight_builtins':1,
-            \}
-            \}
-            \ }
+" let g:PaperColor_Theme_Options = {
+            " \     'theme': {
+            " \     'default.light': {
+            " \       'transparent_background': 1,
+            " \ 'allow_bold': 1,
+            " \ 'allow_italic': 1,
+            " \     }
+            " \   },
+            " \ 'language': {
+            " \ 'python': {
+            " \ 'highlight_builtins':1,
+            " \}
+            " \}
+            " \ }
 let g:one_allow_italics = 1
 
 " keybindings
@@ -101,7 +102,7 @@ endfunction
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 set noswapfile
-
+set hidden
 
 " airline
 " let g:airline_theme='one'
@@ -123,9 +124,8 @@ let g:lightline = {
 let g:lightline.tabline          = {'left': [['buffers']], 'right': [['cocstatus']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
-let g:lightline#bufferline#show_number = 1
-" autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
-
+let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#unicode_symbols = 1
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -210,13 +210,61 @@ augroup END
 
 " fzf
 
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'CursorLine'],
+  \ 'hl':      ['fg', 'String'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+
 nmap <LocalLeader>f :GFiles<CR>
-nmap <LocalLeader>b :Buffer<CR>
+nnoremap <silent> <LocalLeader>b :Buffer<CR>
 nmap <LocalLeader>L :Lines<CR>
 nmap <LocalLeader>h :History<CR>
 nmap <LocalLeader>v :Vista finder<CR>
 
 
+" nnoremap <silent> <LocalLeader>f :call fzf#vim#files('.', {'options': '--prompt' ""''})<CR>
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+function! FloatingFZF()
+    let height = &lines - 3
+    let width = float2nr(&columns - (&columns * 2 / 10))
+    let col = float2nr((&columns - width) / 2)
+
+    " Set up the attribute of floating window
+    let opts = {
+                \ 'relative': 'editor',
+                \ 'row': height * 0.3,
+                \ 'col': col + 20,
+                \ 'width': width * 2 / 3,
+                \ 'height': height / 2
+                \ }
+
+    let buf = nvim_create_buf(v:false, v:true)
+    let win = nvim_open_win(buf, v:true, opts)
+
+    " Floating window highlight setting
+    call setwinvar(win, '&winhl', 'Normal:Pmenu')
+
+    setlocal
+                \ buftype=nofile
+                \ nobuflisted
+                \ bufhidden=hide
+                \ nonumber
+                \ norelativenumber
+                \ signcolumn=no
+endfunction
 
 
 " nerdcommenter
