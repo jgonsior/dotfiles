@@ -45,7 +45,8 @@ Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-docker', {'do': 'yarn install --frozen-lockfile'}
 

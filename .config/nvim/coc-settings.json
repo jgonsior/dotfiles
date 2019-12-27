@@ -1,3 +1,10 @@
 {
-    "python.jediEnabled": true,
+  "python.jediEnabled": true,
+  "typescript.format.enabled": true,
+  "javascript.format.enabled": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "javascript",
+    "typescript"
+  ]
 }
