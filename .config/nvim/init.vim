@@ -21,7 +21,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-vimtex', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-vimtex', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-cost', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
@@ -45,6 +45,8 @@ Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-docker', {'do': 'yarn install --frozen-lockfile'}
 
@@ -57,6 +59,10 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'miyakogi/seiya.vim'
+
+Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
+
 
 call plug#end()
 
@@ -89,6 +95,11 @@ set background=light
             " \}
             " \ }
 let g:one_allow_italics = 1
+
+
+" goyo
+let g:goyo_height = "90%"
+
 
 " keybindings
 let mapleader = ","
@@ -151,14 +162,14 @@ set noshowmode
 map <F2> :Vista!! <CR>
 
 
-"set spell spelllang=en,de
+setlocal spell spelllang=en_us,de
 
 " search
 set ignorecase
 set smartcase
 
 " latex
-set conceallevel=0
+set conceallevel=2
 set wrap 
 set scrolloff=5
 
@@ -273,6 +284,9 @@ let g:NERDCompactSexyComs = 1
 
 vnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 nnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
+
+
+
 
 " coc
 set nobackup
