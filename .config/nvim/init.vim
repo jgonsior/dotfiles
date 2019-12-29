@@ -39,7 +39,7 @@ Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-diagnostic', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-syntax', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-ccls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
