@@ -163,3 +163,7 @@ if [ -n "$VIRTUAL_ENV" ]; then
 elif [ -e "Pipfile" ]; then
     pipenv shell
 fi
+
+
+export PIPENV_VENV_IN_PROJECT="1"
+
