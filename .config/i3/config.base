@@ -1,6 +1,7 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
-exec compton
-exec twmnd 
+exec --no-startup-id compton
+exec --no-startup-id twmnd 
+exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
 
 bindsym $mod+Return exec tilix 

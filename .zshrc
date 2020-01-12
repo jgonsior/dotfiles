@@ -143,6 +143,10 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 
 alias notes="cd ~/documents/n/notes; nvim bullet.md"
+alias gs="git status"
+alias gc="git commit -m"
+alias ga="git add ."
+alias gp="git push"
 
 export MATES_DIR=~/.contacts/contacts
 
@@ -153,3 +157,13 @@ if [ -f ~/.zshrc.local ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if [ -n "$VIRTUAL_ENV" ]; then
+  . "$VIRTUAL_ENV/bin/activate"
+elif [ -e "Pipfile" ]; then
+    pipenv shell
+fi
+
+
+export PIPENV_VENV_IN_PROJECT="1"
+
