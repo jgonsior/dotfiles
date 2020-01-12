@@ -1,10 +1,9 @@
-set $mod Mod4
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
 exec --no-startup-id compton
 exec --no-startup-id twmnd 
 exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
-
+i
 bindsym $mod+Return exec tilix 
 bindsym $mod+e exec mousepad
 
