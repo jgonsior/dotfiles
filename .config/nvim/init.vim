@@ -62,7 +62,7 @@ Plug 'miyakogi/seiya.vim'
 
 Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim'
-
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -73,6 +73,10 @@ endif
 if (has("termguicolors"))
     set termguicolors
 endif
+
+
+let g:python3_host_prog = "/usr/bin/python3"
+
 
 set clipboard=unnamed
 
@@ -100,6 +104,7 @@ let g:one_allow_italics = 1
 " goyo
 let g:goyo_height = "90%"
 
+set encoding=UTF-8
 
 " keybindings
 let mapleader = ","
@@ -118,7 +123,7 @@ set hidden
 " airline
 " let g:airline_theme='one'
 " let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:lightline = {
             \ 'colorscheme' : 'one',
             \ 'active': {
@@ -137,6 +142,7 @@ let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#unicode_symbols = 1
+" let g:lightline#bufferline#enable_devicons = 1
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -278,6 +284,11 @@ function! FloatingFZF()
 endfunction
 
 
+
+" live preview of search
+set inccommand=nosplit
+
+
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -286,6 +297,8 @@ vnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 nnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 
 
+" vimtex
+let g:vimtex_compile_progname = 'nvr'
 
 
 " coc
