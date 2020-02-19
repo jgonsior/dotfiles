@@ -6,9 +6,11 @@
 ; primary = #ffb52a
 ; secondary = #E06C75
 ; alert = #bd2c40
-background = #FAFAFA
+; background = #FAFAFA
+background = #E3E4E6
 background-alt = #6eaafb
 foreground = #2e2e2e
+; foreground = #FAFAFA
 foreground-alt = #424242
 primary = #ffb52a
 secondary = #00AF5F
@@ -64,9 +66,9 @@ modules-center = xwindow
 modules-right = music xbacklight pulseaudio memory cpu temperature network date
 
 tray-position = right
-tray-padding = 1
-; tray-transparent = true
-;tray-background = #0063ff
+tray-padding = 0
+tray-transparent = true
+; tray-background = ${colors.background}
 
 ; wm-restack = i3
 
@@ -160,13 +162,13 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-; format-prefix = " "
+format-prefix = " "
 label = %percentage_used%%
 
 
