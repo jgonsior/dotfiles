@@ -1,5 +1,5 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
-exec --no-startup-id compton
+exec --no-startup-id picom
 exec --no-startup-id twmnd 
 exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
@@ -8,7 +8,7 @@ bindsym $mod+Return exec tilix
 bindsym $mod+e exec mousepad
 
 # lock screen
-bindsym $mod+F12 exec i3lock 
+bindsym $mod+F12 exec betterlockscreen -l dim 
 
 # kill focused window
 bindsym $mod+Shift+a kill
