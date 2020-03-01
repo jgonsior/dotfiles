@@ -27,15 +27,15 @@ monitor = "${env:MONITOR:}"
 #monitor-fallback = "VGA1"
 width = 100%
 height = 24
-;offset-x = 1%
-;offset-y = 1%
+; offset-x = 5%
+; offset-y = 2%
 radius = 0.0
 fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
-border-size = 4
+line-size = 2
+border-size = 5
 border-color = ${colors.background}
 
 padding-left = 0
@@ -47,30 +47,26 @@ module-margin-right = 0
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-;
-font-0 = "SF Pro Text:size=11:weight=bold:antialias=true;2"
-; font-0 = "SauceCodePro Nerd Font:weight=bold:pixelsize=11;3"
-;font-0 = "SF Pro Text:pixelsize=11;3"
-;font-1 = "DroidSans Nerd Font:pixelsize=11;2"
-font-1 = "Icons:pixelsize=13:weight=bold;2"
-; font-1 = "Font Awesome 5 Free:pixelsize=10;2"
+font-0 = "Comfortaa:size=9:weight=bold:antialias=true;3"
+; font-0 = "SF Pro Text:size=10:weight=bold:antialias=true;2"
+font-1 = "Material Icons:size=13;4"
+font-2 = "Icons:pixelsize=13:weight=bold;2"
+font-3 = "SauceCodePro Nerd Font:size=13;2"
 ;font-2 = ${self.font-0}
 ;font-3 = ${self.font-0}
 ;font-3 = ${self.font-0}
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-2 = siji:pixelsize=10;1
 
 
-modules-left = i3
+modules-left = i3 
 modules-center = xwindow
-modules-right = music xbacklight pulseaudio memory cpu temperature network date
+modules-right = music pulseaudio backlight memory cpu temperature battery network date
 
 tray-position = right
 tray-padding = 0
 tray-transparent = true
 ; tray-background = ${colors.background}
 
-; wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -78,7 +74,7 @@ tray-transparent = true
 ;scroll-down = i3wm-wsprev
 
 ; separator = "  %{F#6eaafb}//%{F-}  "
-separator = "      "
+separator = "    "
 
 [bar/beamer]
 monitor = "HDMI3"
@@ -102,9 +98,10 @@ click-right = playerctl next
 type = internal/xwindow
 label = %title:0:400:...%
 
+
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+; format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 content-padding = 0
@@ -112,19 +109,31 @@ content-foreground = ${colors.secondary}
 content-backgound= ${colors.foreground}
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-padding = 1
-margin = 0
+padding = 2
+margin = 1
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-default =
 
 
+format = <label-state>
+label-active = %icon%
+label-occupied = %icon%
+label-urgent = %icon%
+label-empty = %icon%
 
-label-mode-padding = 1
+
 label-mode-background = ${colors.primary}
 
 label-focused = %index%
-label-focused-background = ${colors.secondary}
-label-focused-foreground = ${colors.background}
-label-focused-padding = ${self.padding}
-label-focused-underline = ${colors.background-alt}
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.secondary}
+label-focused-underline = ${colors.secondary}
+label-focused-padding = 2
 
 label-unfocused = %index%
 label-unfocused-padding = ${self.padding}
@@ -133,31 +142,33 @@ label-visible = %index%
 label-visible-background = #404552
 label-visible-padding = ${self.padding}
 
-label-urgent = %index%
+; label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = ${self.padding}
 
-[module/xbacklight]
+[module/backlight]
 type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
 card = intel_backlight
+; card = acpi_video0
+enable-scroll = true
+format = <ramp>
+label = BL %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+
+
+
+; ramp-0 = 🌕
+; ramp-1 = 🌔
+; ramp-2 = 🌓
+; ramp-3 = 🌒
+; ramp-4 = 🌑
 
 [module/cpu]
 type = internal/cpu
@@ -178,8 +189,10 @@ interval = 5
 
 date = "%Y-%m-%d"
 time = "%H:%M "
-format-prefix = " "
+format-prefix = " "
 label = %date% %time%
+click-left = ~/.config/rofi/scripts/menu_powermenu.sh
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -187,36 +200,61 @@ sink = alsa_output.pci-0000_12_00.3.analog-stereo
 use-ui-max = true
 interval = 5
 format-volume = <ramp-volume> <label-volume>
-label-muted =   
+format-muted-prefix =" " 
+label-volume = %percentage%
+label-muted = MUTE
 label-muted-foreground = #666
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+; ramp-volume-0 = 
+; ramp-volume-1 = 
+; ramp-volume-2 = 
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+
+
 
 [module/battery]
 type = internal/battery
+full-at = 99
+poll-interval = 1-
+time-format = %H:%M
 battery = BAT0
-adapter = AC
-full-at = 98
-
+adapter = ADP1
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
+label-charging = %percentage%% (%time%)
+; label-charging = %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% (%time%)
+; label-discharging = %percentage%%
+format-full = <label-full>
 
-format-full-prefix = " "
+format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-ramp-capacity-0 = 
-ramp-capacity-1 =  
-ramp-capacity-2 =  
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0-foreground = ${colors.curgent}
+ramp-capacity-foreground   = ${colors.foreground}
+; bar-capacity-width = 10
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
+
 animation-charging-framerate = 750
+
+
+
+
 
 [module/temperature]
 type = internal/temperature
@@ -224,9 +262,8 @@ thermal-zone = 0
 warn-temperature = 60
 format-prefix = " "
 format = <label>
-format-underline = #f50a4d
 format-warn = <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-underline = #f50a4d
 
 label = %temperature-c%
 label-warn = %temperature-c%
