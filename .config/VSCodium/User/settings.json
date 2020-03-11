@@ -1,0 +1,24 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Atom One Light",
+    "python.jediEnabled": false,
+    "workbench.preferredLightColorTheme": "Atom One Light",
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "'Source Code Pro', 'SF Text Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 15,
+    "files.exclude": {
+        "**/.idea": true
+    },
+    "editor.accessibilitySupport": "off",
+    "editor.fontLigatures": true,
+
+    // fix for neo layout
+    "keyboard.dispatch": "keyCode",
+    "python.analysis.memory.keepLibraryLocalVariables": true,
+    "python.formatting.provider": "yapf",
+    "window.zoomLevel": 0,
+    "terminal.integrated.fontFamily": "\"SauceCodePro Nerd Font\"",
+    "terminal.integrated.fontSize": 15,
+
+}
