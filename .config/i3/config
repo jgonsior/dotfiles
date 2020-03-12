@@ -5,7 +5,7 @@ exec --no-startup-id twmnd
 exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
 
-bindsym $mod+Return exec tilix 
+bindsym $mod+Return exec kitty 
 bindsym $mod+e exec mousepad
 
 # lock screen

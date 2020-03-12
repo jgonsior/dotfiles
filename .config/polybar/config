@@ -47,8 +47,9 @@ module-margin-right = 0
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-font-0 = "Comfortaa:size=9:weight=bold:antialias=true;3"
-; font-0 = "SF Pro Text:size=10:weight=bold:antialias=true;2"
+; font-0 = "Source Code Pro Regular:antialias=true:size=11.5;3"
+; font-0 = "Comfortaa:size=11:weight=bold:antialias=true;3"
+font-0 = "SF Pro Text:size=11:weight=bold:antialias=true;2"
 font-1 = "Material Icons:size=13;4"
 font-2 = "Icons:pixelsize=13:weight=bold;2"
 font-3 = "SauceCodePro Nerd Font:size=13;2"
@@ -208,6 +209,7 @@ label-muted-foreground = #666
 ; ramp-volume-1 = 
 ; ramp-volume-2 = 
 
+click-right = pavucontrol &
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
