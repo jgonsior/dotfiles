@@ -20,5 +20,8 @@
     "window.zoomLevel": 0,
     "terminal.integrated.fontFamily": "\"SauceCodePro Nerd Font\"",
     "terminal.integrated.fontSize": 15,
+    "workbench.enableExperiments": false,
+    "terminal.external.linuxExec": "kitty",
+    "terminal.explorerKind": "external",
 
 }

@@ -1,6 +1,5 @@
 export LANG="en_US.UTF-8"
 source $HOME/.antigen.zsh
-# export TERM="tmux-256color"
 antigen use oh-my-zsh
 
 antigen bundle git
@@ -156,11 +155,11 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-if [ -n "$VIRTUAL_ENV" ]; then
-  . "$VIRTUAL_ENV/bin/activate"
-elif [ -e "Pipfile" ]; then
-    pipenv shell
-fi
+# if [ -n "$VIRTUAL_ENV" ]; then
+  # . "$VIRTUAL_ENV/bin/activate"
+# elif [ -e "Pipfile" ]; then
+    # pipenv shell
+# fi
 
 
 export PIPENV_VENV_IN_PROJECT="1"
