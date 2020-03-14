@@ -1,6 +1,6 @@
 set $mod Mod4
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
-exec --no-startup-id picom
+exec --no-startup-id picom --experimental-backend --backend glx
 exec --no-startup-id twmnd 
 exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
@@ -15,8 +15,7 @@ bindsym $mod+F12 exec betterlockscreen -l dim
 bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
-bindsym $mod+r exec "rofi -modi run -show run -prompt"
-bindsym $mod+k exec "rofi -show calc -modi 'calc:qalc +u8' -lines 1 -config /home/ragada/.config/rofi/config.calc -prompt"
+bindsym $mod+r exec "rofi -modi combi -combi-modi 'drun,run' -show combi -prompt -theme willpower3309.rasi"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

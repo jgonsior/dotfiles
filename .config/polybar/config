@@ -64,10 +64,10 @@ modules-right = music pulseaudio backlight memory cpu temperature battery networ
 
 tray-position = right
 tray-padding = 0
-tray-transparent = true
+; tray-transparent = true
 ; tray-background = ${colors.background}
 
-wm-restack = i3
+; wm-restack = i3
 
 ;override-redirect = true
 
