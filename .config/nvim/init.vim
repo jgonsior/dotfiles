@@ -64,6 +64,9 @@ Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'ryanoasis/vim-devicons'
 
+Plug 'jupyter-vim/jupyter-vim'
+
+
 call plug#end()
 
 
