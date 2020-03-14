@@ -1,0 +1,78 @@
+configuration {
+    display-drun:                   "";
+    display-run:                 "Run";
+    display-combi:"";
+    show-icons: true;
+    matching: "fuzzy";
+    icon-theme: "Adwaita";
+}
+ 
+* {
+    lines: 15;
+    columns: 1;
+    background-color: #00000065;
+    border-color: #00000000;
+    text-color: #EFEFEF;
+    font: "SF Pro Text 13";
+    padding:0;
+    margin:0;
+}
+ 
+#window {
+    border: 0;
+    padding: 40;
+    width: 50%;
+    height: 50%;
+}
+ 
+#mainbox {
+    background-color: #00000000;
+    children: [inputbar, listview];
+    spacing: 10px;
+}
+ 
+ 
+#listview {
+    background-color: #00000000;
+    fixed-height: 0;
+    scrollbar: false;
+}
+ 
+#element {
+    background-color: #00000000;
+    border: 0;
+    /* border-radius: 15px; */
+    padding: 3 0  3 4 ;
+}
+ 
+#element selected {
+    background-color: rgba ( 64, 120, 242, 60 % );
+    text-color: #EFEFEF;
+}
+ 
+ 
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    background-color: #00000000;
+}
+ 
+#case-indicator {
+    background-color: #00000000;
+    spacing:    0;
+}
+#entry {
+    background-color: #00000000;
+    spacing:    0;
+}
+#prompt {
+    background-color: #00000000;
+    spacing:    0;
+}
+ 
+#textbox-prompt-colon {
+    background-color: #00000000;
+    expand:     false;
+    str:        "";
+}
+
+
