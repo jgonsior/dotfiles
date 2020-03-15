@@ -155,11 +155,14 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# if [ -n "$VIRTUAL_ENV" ]; then
-  # . "$VIRTUAL_ENV/bin/activate"
-# elif [ -e "Pipfile" ]; then
+if [[ -v $VIRTUAL_ENV  ]]; then
+    echo "hui"
+    . "$VIRTUAL_ENV/bin/activate"
+elif [ -e "Pipfile" ]; then
+    echo "Activated virtualenv"
     # pipenv shell
-# fi
+    . ".venv/bin/activate"
+fi
 
 
 export PIPENV_VENV_IN_PROJECT="1"

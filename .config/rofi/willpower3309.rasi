@@ -10,7 +10,7 @@ configuration {
 * {
     lines: 15;
     columns: 1;
-    background-color: #E3E4E6ab;
+    background-color: #E3E4E6db;
     text-color: #2e2e2e;
     font: "SF Pro Text 14";
     padding:0;
