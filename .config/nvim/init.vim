@@ -20,12 +20,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-vimtex', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-cost', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-omni', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-word', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-smartf', {'do': 'yarn install --frozen-lockfile'}
@@ -46,7 +46,7 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-docker', {'do': 'yarn install --frozen-lockfile'}
 
@@ -64,7 +64,9 @@ Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim'
 " Plug 'ryanoasis/vim-devicons'
 
-Plug 'jupyter-vim/jupyter-vim'
+" Plug 'jupyter-vim/jupyter-vim'
+" Plug 'jpalardy/vim-slime', { 'for': 'python' }
+" Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 
 call plug#end()
