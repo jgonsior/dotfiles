@@ -65,7 +65,8 @@ Plug 'junegunn/goyo.vim'
 " Plug 'ryanoasis/vim-devicons'
 
 " Plug 'jupyter-vim/jupyter-vim'
-" Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'jpalardy/vim-slime'
+" #, { 'for': 'python' }
 " Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 
@@ -424,3 +425,15 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+" slime
+let g:slime_paste_file = tempname()     
+" let g:slime_default_config = {"socket_name": "default", "target_pane": "{bottom}"}   
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_dont_ask_default = 1
+let g:slime_target ="tmux"                                             
+" let g:slime_python_ipython = 1 
+" nmap <localleader>r :write | :SlimeSend1 !! <CR>
+nmap <localleader>e :w <bar> :SlimeSend1 !! <CR>
+nmap <localleader>s :!tmux send-keys -t {last} "" C-c <CR>
