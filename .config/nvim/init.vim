@@ -1,8 +1,8 @@
 " Auto install vim plug 
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
@@ -91,19 +91,19 @@ syntax on
 colorscheme one 
 set background=light
 " let g:PaperColor_Theme_Options = {
-            " \     'theme': {
-            " \     'default.light': {
-            " \       'transparent_background': 1,
-            " \ 'allow_bold': 1,
-            " \ 'allow_italic': 1,
-            " \     }
-            " \   },
-            " \ 'language': {
-            " \ 'python': {
-            " \ 'highlight_builtins':1,
-            " \}
-            " \}
-            " \ }
+" \     'theme': {
+" \     'default.light': {
+" \       'transparent_background': 1,
+" \ 'allow_bold': 1,
+" \ 'allow_italic': 1,
+" \     }
+" \   },
+" \ 'language': {
+" \ 'python': {
+" \ 'highlight_builtins':1,
+" \}
+" \}
+" \ }
 let g:one_allow_italics = 1
 
 
@@ -231,22 +231,27 @@ augroup fmt
 augroup END
 
 
+let g:neoformat_enabled_python = ['isort', 'black']
+let g:neoformat_only_msg_on_error =1
+let g:neoformat_run_all_formatters = 1
+
+
 " fzf
 
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'CursorLine'],
-  \ 'hl':      ['fg', 'String'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'CursorLine'],
+            \ 'hl':      ['fg', 'String'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 
 
 nmap <LocalLeader>f :GFiles<CR>
@@ -429,11 +434,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " slime
 let g:slime_paste_file = tempname()     
-" let g:slime_default_config = {"socket_name": "default", "target_pane": "{bottom}"}   
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{bottom}"}   
+" let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 let g:slime_dont_ask_default = 1
 let g:slime_target ="tmux"                                             
 " let g:slime_python_ipython = 1 
 " nmap <localleader>r :write | :SlimeSend1 !! <CR>
-nmap <localleader>e :w <bar> :SlimeSend1 !! <CR>
-nmap <localleader>s :!tmux send-keys -t {last} "" C-c <CR>
+nmap <localleader>s :w <bar> :SlimeSend1 !! <CR>
+nmap <localleader>r :w <bar> :SlimeSend0 "\x03" <CR> <bar> :SlimeSend1 !! <CR>
+nmap <localleader>k :SlimeSend0 "\x03" <CR>
