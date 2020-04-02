@@ -13,7 +13,7 @@ configuration {
     /* background-color: #E3E4E688; */
     background-color: #fafafa88;
     text-color: #2e2e2e;
-    font: "SF Pro Text 11";
+    font: "SF Pro Text 13";
     padding:0;
     margin:0;
 }
