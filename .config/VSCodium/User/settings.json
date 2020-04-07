@@ -16,7 +16,7 @@
     // fix for neo layout
     "keyboard.dispatch": "keyCode",
     "python.analysis.memory.keepLibraryLocalVariables": true,
-    "python.formatting.provider": "yapf",
+    "python.formatting.provider": "black",
     "window.zoomLevel": 0,
     "terminal.integrated.fontFamily": "\"SauceCodePro Nerd Font\"",
     "terminal.integrated.fontSize": 15,
