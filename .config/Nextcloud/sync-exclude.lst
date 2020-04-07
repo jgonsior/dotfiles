@@ -32,5 +32,5 @@ System Volume Information
 .nfs*
 My Saved Places.
 \#*#
-*.venv
+.venv
 node_modules
