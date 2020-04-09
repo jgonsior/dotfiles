@@ -1,16 +1,10 @@
-*~
-~$*
 .~lock.*
 ~*.tmp
-]*.~*
 ]Icon\r*
 ].DS_Store
 ].ds_store
-._*
 ]Thumbs.db
 System Volume Information
-.*.sw?
-.*.*sw?
 ].TemporaryItems
 ].Trashes
 ].DocumentRevisions-V100
@@ -31,6 +25,5 @@ System Volume Information
 *.unison
 .nfs*
 My Saved Places.
-\#*#
 .venv
 node_modules
