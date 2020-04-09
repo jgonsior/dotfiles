@@ -1,11 +1,11 @@
-# if [[ -v $VIRTUAL_ENV  ]]; then
-    # echo "hui"
-    # . "$VIRTUAL_ENV/bin/activate"
-# elif [ -e "Pipfile" ]; then
-    # echo "Activated virtualenv"
-    # # pipenv shell
-    # . ".venv/bin/activate"
-# fi
+if [[ -v $VIRTUAL_ENV  ]]; then
+    echo "hui"
+    . "$VIRTUAL_ENV/bin/activate"
+elif [ -e "Pipfile" ]; then
+    echo "Activated virtualenv"
+    # pipenv shell
+    . ".venv/bin/activate"
+fi
 
 
 # export PIPENV_VENV_IN_PROJECT="1"
