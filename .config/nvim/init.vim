@@ -308,10 +308,6 @@ vnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 nnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 
 
-" vimtex
-let g:vimtex_compile_progname = 'nvr'
-
-
 " coc
 set nobackup
 set nowritebackup
@@ -443,3 +439,16 @@ let g:slime_target ="tmux"
 nmap <localleader>s :w <bar> :SlimeSend1 !! <CR>
 nmap <localleader>r :w <bar> :SlimeSend0 "\x03" <CR> <bar> :SlimeSend1 !! <CR>
 nmap <localleader>k :SlimeSend0 "\x03" <CR>
+
+
+
+
+" vimtex
+" let g:vimtex_compile_progname = 'nvr'
+" let g:vimtex_quickfix_enabled = 0
+let g:vimtex_quickfix_autojump = 0
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_autoclose_after_keystrokes = 1
+let g:vimtex_quickfix_open_on_warning = 0
+
+

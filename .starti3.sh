@@ -1,6 +1,8 @@
-!/bin/bash
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+#!/bin/bash
+export DESKTOP_SESSION=gnome
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+dbus-update-activation-environment --systemd DISPLAY
 $HOME/.startLocalStuff.sh&
 # (sleep 1 && feh --bg-fill $HOME/pictures/wallpaper/wallpaper.jpg)&
 setxkbmap -layout de,de -variant neo,basic -option -option grp:sclk_toggle -option grp_led:scroll&
