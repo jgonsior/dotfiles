@@ -4,76 +4,82 @@ configuration {
     display-combi:"";
     show-icons: true;
     matching: "fuzzy";
-    icon-theme: "Flat-Remix-Blue";
+    /* icon-theme: "Flat-Remix-Blue"; */
+    icon-theme: "Korla Light";
 }
- 
+
 * {
     lines: 15;
     columns: 1;
     /* background-color: #E3E4E688; */
     background-color: #fafafa88;
     text-color: #2e2e2e;
-    font: "SF Pro Text 13";
+    font: "SF Pro Text 24";
     padding:0;
     margin:0;
 }
- 
+
 #window {
     border: 0;
     padding: 10;
-    width: 50%;
+    width: 30%;
     height: 50%;
 }
- 
+
 #mainbox {
-background-color: #00000000;
+    background-color: #00000000;
     children: [inputbar, listview];
     spacing: 10px;
 }
- 
- 
+
+
 #listview {
-background-color: #00000000;
+    background-color: #00000000;
     fixed-height: 0;
     scrollbar: false;
 }
- 
+
 #element {
-background-color: #00000000;
+    background-color: #00000000;
     border: 0;
     padding: 3 0  3 4 ;
+    height: 300%;
 }
- 
+
 #element selected {
     /* background-color: rgba ( 64, 120, 242, 60 % ); */
     text-color: #EFEFEF;
     background-color: #1e88e5;
 }
- 
- 
+
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
     /* background-color: #ffb52a; */
-background-color: #00000000;
+    background-color: #00000000;
 }
- 
+
 #case-indicator {
-background-color: #00000000;
+    background-color: #00000000;
     spacing:    0;
 }
 #entry {
-background-color: #00000000;
+    background-color: #00000000;
     spacing:    0;
 }
 #prompt {
-background-color: #00000000;
+    background-color: #00000000;
     spacing:    0;
 }
- 
+
 #textbox-prompt-colon {
-background-color: #00000000;
+    background-color: #00000000;
     expand:     false;
     str:        "";
 }
 
+#entry {
+    font: "SF Pro Text 48";
+    /* text-color: #ca1243; */
+}
 
+/* vim:ft=css

@@ -15,7 +15,7 @@ bindsym $mod+F12 exec betterlockscreen -l dim
 bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
-bindsym $mod+r exec "rofi -modi combi -combi-modi 'drun,run' -show combi -prompt -theme willpower3309.rasi"
+bindsym $mod+r exec "rofi -modi combi -combi-modi 'drun,run' -show combi -prompt -theme willpower3309.rasi -drun-display-format '{name}'"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
