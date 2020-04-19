@@ -225,15 +225,23 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 
 
 " run formatter on save
-augroup fmt
+augroup Filetype tex fmt
     autocmd!
-    autocmd BufWritePre * undojoin | Neoformat
+    autocmd BufWritePre *.tex undojoin | Neoformat
 augroup END
 
 
-let g:neoformat_enabled_python = ['isort', 'black']
+" let g:neoformat_enabled_python = ['isort', 'black']
 let g:neoformat_only_msg_on_error =1
 let g:neoformat_run_all_formatters = 1
+
+let g:neoformat_tex_latexindent= {
+            \ 'exe': 'latexindent',
+            \ 'args': ['-o %p', '-l=/home/julius/.latexindent.yaml','-g /dev/stderr', '2>/dev/null', '-'],
+            \ 'stdin': 1, 
+            \}
+
+let g:neoformat_enabled_tex = ['latexindent']
 
 
 " fzf
