@@ -1,7 +1,7 @@
 # Base16 One Light
 # Author: Daniel Pfeifer (http://github.com/purpleKarrot)
 
-set default-bg                  "#fafafa"
+set default-bg                  "#aaaaaa"
 set default-fg                  "#f0f0f1"
 
 set statusbar-fg                "#696c77"

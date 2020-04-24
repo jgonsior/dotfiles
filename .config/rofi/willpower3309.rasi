@@ -12,15 +12,15 @@ configuration {
     lines: 15;
     columns: 1;
     /* background-color: #E3E4E688; */
-    background-color: #fafafa88;
+    background-color: #fafafa;
     text-color: #2e2e2e;
-    font: "SF Pro Text 24";
+    font: "SF Pro Text 16";
     padding:0;
     margin:0;
 }
 
 #window {
-    border: 0;
+    border: 1;
     padding: 10;
     width: 30%;
     height: 50%;
@@ -78,7 +78,7 @@ configuration {
 }
 
 #entry {
-    font: "SF Pro Text 48";
+    font: "SF Pro Text 28";
     /* text-color: #ca1243; */
 }
 
