@@ -58,6 +58,11 @@ font-3 = "SauceCodePro Nerd Font:size=13;2"
 ;font-3 = ${self.font-0}
 
 
+border-bottom-size = 1px
+border-bottom-color = #e5e5e6
+
+
+
 modules-left = i3 
 modules-center = xwindow
 modules-right = music pulseaudio backlight memory cpu temperature battery network date
@@ -88,7 +93,7 @@ inherit = bar/main
 type = custom/script
 interval = 2
 
-label = %output:0:100:...%
+label = %output:0:80:...%
 exec = ~/.config/polybar/mpris.sh
 click-left = playerctl previous
 click-middle = playerctl play-pause

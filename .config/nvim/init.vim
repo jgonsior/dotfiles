@@ -225,13 +225,13 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 
 
 " run formatter on save
-augroup Filetype tex fmt
+augroup fmt
     autocmd!
-    autocmd BufWritePre *.tex undojoin | Neoformat
+    autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
 
-" let g:neoformat_enabled_python = ['isort', 'black']
+let g:neoformat_enabled_python = ['black']
 let g:neoformat_only_msg_on_error =1
 let g:neoformat_run_all_formatters = 1
 
@@ -380,8 +380,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
     autocmd!
@@ -406,7 +406,7 @@ xmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
+" command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)

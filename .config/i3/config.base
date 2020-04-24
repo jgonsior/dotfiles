@@ -1,5 +1,5 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
-exec --no-startup-id picom --experimental-backends --backend glx
+# exec --no-startup-id picom --experimental-backends --backend glx
 exec --no-startup-id twmnd 
 exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
@@ -122,7 +122,20 @@ bindsym $mod+d mode "resize"
 
 new_window none
 
-hide_edge_borders both
+hide_edge_borders smart_no_gaps
+default_border pixel 1
+# class                 border  backgr. text    indicator child_border
+client.focused          #f0f0f1 #285577 #ffffff #2e9ef4   #696c77
+client.focused_inactive #f0f0f1 #5f676a #ffffff #484e50   #f0f0f1
+client.unfocused        #f0f0f1 #ffffff #888888 #292d2e   #f0f0f1
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #ffffff #ffffff #ffffff #ffffff   #ffffff
+client.background       #00ffff
+
+smart_gaps on
+gaps inner 10
+smart_borders no_gaps
+
 
 for_window [class="Spotify"] move to workspace 2
 
