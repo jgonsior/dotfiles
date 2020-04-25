@@ -6,6 +6,7 @@ configuration {
     matching: "fuzzy";
     /* icon-theme: "Flat-Remix-Blue"; */
     icon-theme: "Korla Light";
+    /* icon-theme: "Yaru"; */
 }
 
 * {
@@ -32,7 +33,6 @@ configuration {
     spacing: 10px;
 }
 
-
 #listview {
     background-color: #00000000;
     fixed-height: 0;
@@ -44,6 +44,16 @@ configuration {
     border: 0;
     padding: 3 0  3 4 ;
     height: 300%;
+}
+#element-icon {
+    size: 64;
+    border: 10px;
+    border-color: #FF0000;
+}
+element-icon {
+    size: 64;
+    border: 10px;
+    border-color: #FF0000;
 }
 
 #element selected {
