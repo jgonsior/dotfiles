@@ -70,6 +70,10 @@ Plug 'jpalardy/vim-slime'
 " Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 
+Plug 'rhysd/vim-grammarous'
+Plug 'reedes/vim-wordy'
+" https://github.com/dbmrq/vim-ditto
+
 call plug#end()
 
 
@@ -184,6 +188,8 @@ set smartcase
 set conceallevel=2
 set wrap 
 set scrolloff=5
+
+
 
 set title
 set titlestring=%{hostname()}\ \ %F\ \ \ %{strftime('%Y-%m-%d\ %H:%M',getftime(expand('%')))}
@@ -311,6 +317,9 @@ set inccommand=nosplit
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+" let g:NERDDefaultAlign = 'start'
+let g:NERDDefaultAlign = 'left'
 
 vnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>
 nnoremap <LocalLeader>t :call NERDComment(0,"toggle")<CR>

@@ -4,7 +4,7 @@ exec --no-startup-id twmnd
 exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec kitty 
 bindsym $mod+e exec mousepad
 
 # lock screen
@@ -132,7 +132,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #ffffff #ffffff #ffffff #ffffff   #ffffff
 client.background       #00ffff
 
-smart_gaps on
+# smart_gaps on
 gaps inner 5
 smart_borders no_gaps
 
