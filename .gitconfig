@@ -26,3 +26,5 @@
 [user]
 	email = julius@gaenseri.ch
 	name = Julius Gonsior
+[pull]
+	rebase = false
