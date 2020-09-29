@@ -5,7 +5,6 @@ firefox&
 #(sleep 25 && syncthing-gtk) &
 (sleep 5 && telegram-desktop) &
 # (sleep 5 && tilix -w "~/documents/n/notes")&
-(sleep 5 && nextcloud)&
 xfce4-power-manager&
-blueman-applet&
+# blueman-applet&
 (sleep 5 && spotify)&
