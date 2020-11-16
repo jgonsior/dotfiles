@@ -1,7 +1,7 @@
 font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu Sans Mono  10.5
 # exec --no-startup-id picom --experimental-backends --backend glx
 exec --no-startup-id twmnd 
-exec --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/background.jpg
+exec --no-startup-id feh --bg-fill $HOME/.background.jpg
 floating_modifier $mod
 
 bindsym $mod+Return exec kitty 
