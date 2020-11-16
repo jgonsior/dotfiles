@@ -268,7 +268,7 @@ let g:fzf_colors =
             \ 'header':  ['fg', 'Comment'] }
 
 
-nmap <LocalLeader>f :GFiles<CR>
+nmap <LocalLeader>f :GFiles --recurse-submodules<CR>
 nnoremap <silent> <LocalLeader>b :Buffer<CR>
 nmap <LocalLeader>L :Lines<CR>
 nmap <LocalLeader>h :History<CR>

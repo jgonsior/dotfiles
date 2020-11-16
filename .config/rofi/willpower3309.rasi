@@ -45,15 +45,10 @@ configuration {
     padding: 3 0  3 4 ;
     height: 300%;
 }
-#element-icon {
-    size: 64;
-    border: 10px;
-    border-color: #FF0000;
-}
 element-icon {
-    size: 64;
-    border: 10px;
-    border-color: #FF0000;
+    size: 32;
+    /* border: 10px; */
+    /* border-color: #FF0000; */
 }
 
 #element selected {
