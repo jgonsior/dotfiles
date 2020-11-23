@@ -35,20 +35,33 @@ configuration {
 
 #listview {
     background-color: #00000000;
-    fixed-height: 0;
     scrollbar: false;
+    columns: 5;
+    spacing: 4px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
 }
 
 #element {
     background-color: #00000000;
     border: 0;
-    padding: 3 0  3 4 ;
+    padding: 14px;
+    /* padding: 3 0  3 4 ; */
     height: 300%;
+    orientation: vertical;
+    margin: 11px;
 }
 element-icon {
-    size: 32;
+    size: 80px;
+    margin: 0 10px 0 0;
     /* border: 10px; */
     /* border-color: #FF0000; */
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
 }
 
 #element selected {
