@@ -467,5 +467,3 @@ let g:vimtex_quickfix_autojump = 0
 let g:vimtex_quickfix_mode = 2
 let g:vimtex_quickfix_autoclose_after_keystrokes = 1
 let g:vimtex_quickfix_open_on_warning = 0
-
-

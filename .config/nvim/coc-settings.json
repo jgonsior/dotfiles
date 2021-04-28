@@ -1,10 +1,12 @@
 {
-  "python.jediEnabled": false,
-  "typescript.format.enabled": true,
-  "javascript.format.enabled": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "python",
-    "javascript",
-    "typescript"
-  ]
+    "python.linting.mypyEnabled": true,
+    "python.formatting.provider": "black",
+    "python.jediEnabled": false,
+    "typescript.format.enabled": true,
+    "javascript.format.enabled": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python",
+        "javascript",
+        "typescript"
+    ]
 }
