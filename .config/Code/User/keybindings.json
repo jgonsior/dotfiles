@@ -1,0 +1,52 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Toggle between terminal and editor focus
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+shift+left",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "alt+shift+right",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "alt+shift+up",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "alt+shift+down",
+        "command": "workbench.action.navigateDown"
+    },
+]

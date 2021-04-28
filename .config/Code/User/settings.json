@@ -1,0 +1,61 @@
+{
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "workbench.preferredDarkColorTheme": "Quiet Light",
+    "workbench.colorTheme": "Atom One Light",
+    "workbench.preferredLightColorTheme": "Quiet Light",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Pylance",
+    "editor.formatOnSave": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "'Source Code Pro', 'SoureCodePro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "remote.downloadExtensionsLocally": true,
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.provider": "black",
+    "terminal.explorerKind": "external",
+    "terminal.external.linuxExec": "kitty",
+    "keyboard.dispatch": "keyCode",
+    "telemetry.enableTelemetry": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "python.analysis.completeFunctionParens": true,
+    "window.zoomLevel": 0,
+    "editor.fontSize": 15,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.cacheFolderPath": "~/.local/share/vs-code-cache",
+    "python.analysis.logLevel": "Warning",
+    "python.diagnostics.sourceMapsEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.venvFolders": [
+        "~/.local/share/virtualenvs/"
+    ],
+    "python.workspaceSymbols.enabled": true,
+    "pylance.insidersChannel": "daily",
+    "python.insidersChannel": "off",
+    "python.linting.ignorePatterns": [
+        ".vscode/*.py",
+        "**/site-packages/**/*.py",
+        "**/typings/**/*.pyi",
+        "typings/**/*.pyi",
+        "typings/*/*/*.pyi"
+    ],
+    "html.format.indentHandlebars": true,
+    "editor.formatOnType": true,
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": true,
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "none",
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": true,
+    "git.suggestSmartCommit": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "python.venvPath": "~/.cache/pypoetry/virtualenvs",
+    "terminal.integrated.scrollback": 100000
+}

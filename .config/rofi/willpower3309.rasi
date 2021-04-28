@@ -23,7 +23,7 @@ configuration {
 #window {
     border: 1;
     padding: 10;
-    width: 30%;
+    width: 45%;
     height: 50%;
 }
 
