@@ -57,5 +57,10 @@
     "git.suggestSmartCommit": false,
     "workbench.startupEditor": "newUntitledFile",
     "python.venvPath": "~/.cache/pypoetry/virtualenvs",
-    "terminal.integrated.scrollback": 100000
+    "terminal.integrated.scrollback": 100000,
+    "notebook.lineNumbers": "on",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "jupyter.askForKernelRestart": false
 }
