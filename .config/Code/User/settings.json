@@ -3,12 +3,9 @@
     "workbench.preferredDarkColorTheme": "Quiet Light",
     "workbench.colorTheme": "Atom One Light",
     "workbench.preferredLightColorTheme": "Quiet Light",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
@@ -62,5 +59,9 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "jupyter.askForKernelRestart": false
+    "jupyter.askForKernelRestart": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    }
 }
