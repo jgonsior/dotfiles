@@ -2,19 +2,21 @@ font pango:Source Code Pro Medium, Roboto Mono Regular for Powerline, DejaVu San
 # exec --no-startup-id picom --experimental-backends --backend glx
 exec --no-startup-id twmnd 
 exec --no-startup-id feh --bg-fill $HOME/.background.jpg
+exec --no-startup-id source ~/.fehbg
 floating_modifier $mod
 
 bindsym $mod+Return exec kitty 
 bindsym $mod+e exec mousepad
 
 # lock screen
-bindsym $mod+F12 exec betterlockscreen -l dim 
+bindsym $mod+F12 exec betterlockscreen -l 
 
 # kill focused window
 bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
 bindsym $mod+r exec "rofi -modi combi -combi-modi 'drun,run' -show combi -prompt -theme willpower3309.rasi -drun-display-format '{name}'"
+bindsym $mod+z exec "~/.github_repos/zzzfoo/zzzfoo -r \"-theme file_search.rasi -drun-display-format '{name}'\" -o xdg-open --synthetic-abstract"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -150,6 +152,10 @@ for_window [class="Spotify"] move to workspace 2
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+
+
+
+
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
