@@ -22,7 +22,6 @@
     "telemetry.enableTelemetry": false,
     "gitlens.hovers.currentLine.over": "line",
     "python.analysis.completeFunctionParens": true,
-    "window.zoomLevel": 0,
     "editor.fontSize": 15,
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.cacheFolderPath": "~/.local/share/vs-code-cache",
@@ -63,5 +62,6 @@
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
-    }
+    },
+    "window.zoomLevel": 0
 }

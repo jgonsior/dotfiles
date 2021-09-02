@@ -84,6 +84,7 @@ font:
     # family: SauceCodePro Nerd Font
     family: Source Code Pro
     style: Regular
+    font_size: 16
 
   # Bold font face
   # bold:
@@ -96,7 +97,7 @@ font:
     # style: Italic
 
   # Point size
-  size: 8
+  size: 3
   # size: 26
     # size: 12
   
