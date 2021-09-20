@@ -17,7 +17,7 @@ bindsym $mod+Shift+a kill
 
 # start rofi (a program launcher)
 bindsym $mod+r exec "rofi -modi combi -combi-modi 'drun,run' -show combi -prompt -theme willpower3309.rasi -drun-display-format '{name}'"
-bindsym $mod+z exec "/home/julius/.github_repos/zzzfoo/zzzfoo -r '-theme file_search.rasi'  -o xdg-open --synthetic-abstract"
+bindsym $mod+z exec "~/.github_repos/zzzfoo/zzzfoo -r \"-theme file_search.rasi -drun-display-format '{name}'\" -o xdg-open --synthetic-abstract"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -140,7 +140,7 @@ gaps inner 5
 smart_borders no_gaps
 
 
-for_window [class="Spotify"] move to workspace 2
+for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace 2
 
 #exec --no-startup-id tilix -T notes --working-directory=/home/ragada/.syncthing/sharing/documents/n/notes/ -e "nvim todos.md"
 #assign [title="notes"] 3
