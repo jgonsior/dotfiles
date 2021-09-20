@@ -55,6 +55,8 @@ configuration {
 element-icon {
     size: 80px;
     margin: 0 10px 0 0;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
     /* border: 10px; */
     /* border-color: #FF0000; */
 }
@@ -62,6 +64,20 @@ element-icon {
 element-text {
     horizontal-align: 0.5;
     vertical-align: 0.5;
+}
+
+#element-text selected{
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    background-color: #1e88e5;
+    text-color: #EFEFEF;
+}
+
+#element-icon selected {
+    size: 80px;
+    margin: 0 10px 0 0;
+    background-color: #1e88e5;
+    text-color: #EFEFEF;
 }
 
 #element selected {
