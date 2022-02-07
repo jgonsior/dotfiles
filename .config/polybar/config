@@ -65,7 +65,7 @@ border-bottom-color = #e5e5e6
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = music pulseaudio backlight memory cpu temperature battery network date
+modules-right = music pulseaudio backlight memory cpu temperature battery net-wired net-wireless date
 
 tray-position = right
 tray-padding = 0
@@ -287,14 +287,26 @@ base-temperature = 30
 ; ramp-0 = 
 ;
 
-[module/network]
+[module/net-base]
 type = internal/network
-interface = ${file:$HOME/.config/polybar/network:eno1}
+; interface = ${file:$HOME/.config/polybar/network:eno1}
 interval = 3
 #accumulate-stats = true
 
 label-connected =  %downspeed%  %upspeed%
 #label-connected =  %upspeed:4:9%  %downspeed:4:9%
+
+
+[module/net-wired]
+inherit=module/net-base
+; interface-type=wired/wireless
+interface=enp0s20f0u2u1
+
+[module/net-wireless]
+inherit=module/net-base
+; interface-type=wired/wireless
+interface=wlp0s20f3
+
 
 [settings]
 screenchange-reload = true
