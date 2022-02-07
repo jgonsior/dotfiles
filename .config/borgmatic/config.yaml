@@ -1,0 +1,34 @@
+location:
+    source_directories:
+        - /home/jg
+        - /mnt/veracrypt1/nc
+
+    repositories:
+        - /mnt/veracrypt1/backup
+
+    exclude_patterns:
+        # - /home/jg/Nextcloud
+        - '*.pyc'
+        - /home/*/.cache
+        # - '*/.vim*.tmp'
+        # - /etc/ssl
+        # - /home/user/path with spaces
+
+    exclude_caches: true
+
+retention:
+    keep_daily: 7
+    keep_weekly: 4
+    keep_monthly: 6
+    keep_yearly: 10000000000000
+
+consistency:
+    checks:
+        - repository
+        - archives
+
+hooks:
+    before_backup:
+      - findmnt /mnt/veracrypt1 > /dev/null || exit 75
+
+    healthchecks: https://hc-ping.com/a091c4f9-bafc-4fd1-83a4-d0d097435724
