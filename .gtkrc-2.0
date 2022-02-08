@@ -4,8 +4,8 @@
 include "/home/jg/.gtkrc-2.0.mine"
 gtk-theme-name="Yaru-Blue-light"
 gtk-icon-theme-name="Arc"
-gtk-font-name="Cantarell 11"
-gtk-cursor-theme-name="Adwaita"
+gtk-font-name="SF Pro Text 11"
+gtk-cursor-theme-name="elementary"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
