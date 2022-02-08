@@ -63,5 +63,7 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "security.workspace.trust.untrustedFiles": "open",
+    "notebook.output.textLineLimit": 500
 }
