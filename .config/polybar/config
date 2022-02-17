@@ -65,7 +65,7 @@ border-bottom-color = #e5e5e6
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = music pulseaudio backlight memory cpu temperature battery net-wired net-wireless date
+modules-right = music pulseaudio pulseaudio-toggle backlight memory cpu temperature battery net-wired net-wireless date
 
 tray-position = right
 tray-padding = 0
@@ -93,7 +93,7 @@ inherit = bar/main
 type = custom/script
 interval = 2
 
-label = %output:0:80:...%
+; label = %output:0:80:...%
 exec = ~/.config/polybar/mpris.sh
 click-left = playerctl previous
 click-middle = playerctl play-pause
@@ -223,6 +223,21 @@ ramp-volume-4 = 
 ramp-volume-5 = 
 ramp-volume-6 = 
 
+
+
+[module/pulseaudio-toggle-36]
+type= custom/ipc
+hook-0 = echo 
+hook-1 = echo 
+click-left = python $HOME/Nextcloud/
+initial = 500
+
+[module/pulseaudio-toggle]
+type = custom/script
+interval = 1
+format = <label>
+exec = python $HOME/Nextcloud/.scripts/pavu_label.py
+click-left = python $HOME/Nextcloud/.scripts/pavu.py
 
 
 [module/battery]
