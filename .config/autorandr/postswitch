@@ -1,4 +1,4 @@
 #!/bin/bash
 
-feh --bg-fill $HOME/pictures/wallpapers/background.jpg
+feh --bg-fill $HOME/.background.jpg
 i3-msg restart
