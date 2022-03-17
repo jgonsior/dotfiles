@@ -2,7 +2,19 @@
 	path = ~/.gitconfig-local
 [core]
 	editor = nvim
-	autocrlf = input
+    autocrlf = input
+    pager= "delta --light"
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = True
+    side-by-side = true
+    line-numbers = true
+    theme = Github
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [push]
 	default = matching
 
