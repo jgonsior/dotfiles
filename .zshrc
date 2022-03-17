@@ -113,6 +113,10 @@ alias gc="git commit -m"
 alias ga="git add ."
 alias gp="git push"
 
+alias ls="exa"
+alias cat="bat"
+# alias 
+
 export MATES_DIR=~/.contacts/contacts
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
