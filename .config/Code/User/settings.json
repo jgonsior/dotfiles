@@ -35,7 +35,6 @@
     ],
     "python.workspaceSymbols.enabled": true,
     "pylance.insidersChannel": "daily",
-    "python.insidersChannel": "off",
     "python.linting.ignorePatterns": [
         ".vscode/*.py",
         "**/site-packages/**/*.py",
